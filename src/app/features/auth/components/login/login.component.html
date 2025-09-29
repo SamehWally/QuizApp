@@ -1,1 +1,61 @@
-<p>login works!</p>
+<section >
+<h4 class="auth-title">Continue your learning journey with QuizWiz!</h4>
+<div class="switch-buttons">
+    <div class="row justify-content-between gx-5">
+        <div class="col-6">
+            <button type="button" class="rout-btn " routerLink="/auth/login" routerLinkActive="active">
+                <i class="pi pi-user" style="font-size: 2.5rem"></i>
+                <p>Sign in</p>
+            </button>
+        </div>
+        <div class="col-6">
+              <button type="button" class="rout-btn" routerLink="/auth/register" routerLinkActive="active">
+                <i class="pi pi-user-plus" style="font-size: 2.5rem"></i>
+                <p>Sign Up</p>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="auth-form">
+  <form [formGroup]="loginForm" (ngSubmit)="SubmitForm(loginForm)">
+      <!-- email input -->
+    <div class="Group-auth-input">
+    <label for="email" class="my-1">Registered email address</label>
+    <p-iconfield>
+    <p-inputicon styleClass="pi pi-user" />
+    <input pInputText id="email"  formControlName="email" placeholder="Email"  class="auth-input"/>
+    </p-iconfield>
+
+    <div class="auth-errors">
+        @if(loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched){
+            <span class="text-danger ">Email is required</span>
+            }
+            @if(loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched){
+            <span class="text-danger ">Please enter a valid email</span>
+            }
+    </div>
+    </div>
+    <!-- password input -->
+    <div class="Group-auth-input password-input">
+    <label  class="my-1">Password</label>
+    <div class="password-group">
+        <i class="pi pi-key password-icon"></i>
+        <p-password  formControlName="password" [showClear]="true"  [toggleMask]="true" placeholder="Password" />
+    </div>
+        <div class="auth-errors">
+        @if(loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched){
+            <span class="text-danger ">Password is required</span>
+            }
+            @if(loginForm.get('password')?.hasError('pattern') && loginForm.get('password')?.touched){
+            <span class="text-danger ">{{passwordError}}</span>
+            }
+    </div>
+    </div>
+    <!-- submit button -->
+     <div class="auth-submit">
+        <button type="submit">Sign in <i class="pi pi-check"></i></button>
+     </div>
+  </form>
+</div>
+</section>

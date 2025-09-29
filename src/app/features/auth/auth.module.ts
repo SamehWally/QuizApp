@@ -8,6 +8,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ResetComponent } from './components/reset/reset.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    InputTextModule,
+    PasswordModule,
+    IconField,
+    InputIcon
+]
 })
 export class AuthModule {}
