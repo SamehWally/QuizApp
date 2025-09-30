@@ -1,3 +1,4 @@
+import { ChangePassword } from './../interfaces/change-password';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -13,4 +14,9 @@ export class AuthService {
   {
     return this._http.post<ILoginResponse>('auth/login',data);
   }
+   ChangePassword(data:ChangePassword):Observable<ILoginResponse>
+  {
+    return this._http.post<ILoginResponse>('auth/change-password',data);
+  }
 }
+
