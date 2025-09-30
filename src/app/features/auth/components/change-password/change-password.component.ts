@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -23,7 +23,7 @@ export class ChangePasswordComponent {
       Validators.pattern(this.PasswordPattern),
     ]),
   });
-  constructor(private _auth: AuthService, private _toast: ToastService,private router:Router) {}
+  constructor(private _auth: AuthService, private _toast: ToastService,) {}
   SubmitForm(data: FormGroup) {
     this._auth.ChangePassword(data.value).subscribe({
       next: (res) => {
@@ -34,7 +34,6 @@ export class ChangePasswordComponent {
       },
       complete:()=>{
          this._toast.showSuccess('login success');
-        this.router.navigate(['/auth'])
       }
     });
   }

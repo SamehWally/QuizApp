@@ -29,6 +29,7 @@ export class LoginComponent {
       next: (res: ILoginResponse) => {
         this._toast.showSuccess('login success');
         localStorage.setItem('token',res.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.refreshToken);
 
       },
       complete:()=>{

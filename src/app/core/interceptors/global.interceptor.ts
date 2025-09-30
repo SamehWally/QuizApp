@@ -9,7 +9,7 @@ export const globalInterceptor: HttpInterceptorFn = (req, next) => {
   const id = inject(PLATFORM_ID);
   let userToken = '';
   if (isPlatformBrowser(id)) {
-    userToken = localStorage.getItem('userToken') || '';
+    userToken = localStorage.getItem('token') || '';
   }
   const spinner = inject(NgxSpinnerService);
   spinner.show();
@@ -18,11 +18,13 @@ export const globalInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   const token = localStorage.getItem('userToken');
-
+console.log("User Token: ", userToken);
   const myReq = req.clone({
     url: environment.ServerUrl + req.url,
+    
     setHeaders: {
-      Authorization: `${userToken}`,
+      
+      Authorization: `Bearer ${userToken}`,
     },
   });
 
