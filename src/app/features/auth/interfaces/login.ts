@@ -22,3 +22,4 @@ export interface IProfile {
   status: string
   role: string
 }
+
