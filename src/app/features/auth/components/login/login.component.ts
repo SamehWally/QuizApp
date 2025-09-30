@@ -29,11 +29,11 @@ export class LoginComponent {
       next: (res: ILoginResponse) => {
         this._toast.showSuccess('login success');
         localStorage.setItem('token',res.data.accessToken);
+        localStorage.setItem('role',res.data.profile.role);
 
       },
       complete:()=>{
-        //route to dashboard
-        this.router.navigate(['/auth'])
+        this.router.navigate(['/dashboard'])
       }
     });
   }
