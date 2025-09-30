@@ -90,3 +90,16 @@
   }
 }
 /* ======================End auth====================== */
+
+.language-btn{
+  padding: 2px 15px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: capitalize;
+}

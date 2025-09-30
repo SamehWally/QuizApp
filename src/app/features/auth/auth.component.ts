@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent {
+  language:string='En';
+  changeLanguage(){
+  if(this.language == 'En'){
+    this.language='Ar';
+  }else{
+    this.language='En';
+  }
+  }
 }
