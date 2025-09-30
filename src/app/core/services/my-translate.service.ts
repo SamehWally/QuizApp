@@ -6,37 +6,38 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root',
 })
 export class MyTranslateService {
-  private readonly _TranslateService = inject(TranslateService);
-  private readonly _PLATFORM_ID = inject(PLATFORM_ID);
-  constructor() {
-    if (isPlatformBrowser(this._PLATFORM_ID)) {
-      //1-Get Language From localStorage
-      const SavedLanguage = localStorage.getItem('lang') || 'en';
-      //2- Set Default Language
-      this._TranslateService.setFallbackLang('en');
-      //3-use Language From localStorage
-      this._TranslateService.use(SavedLanguage!);
-      //4-Go to change direction
-      this.changeDirection();
-      //5-Go to Configuration in your appConfig
-    }
-  }
-  changeDirection() {
-    const SavedLanguage = localStorage.getItem('lang');
+  private readonly translateService = inject(TranslateService);
+  private readonly platformId = inject(PLATFORM_ID);
 
-    if (SavedLanguage === 'ar') {
-      // change dir rtl
-      document.documentElement.dir = 'rtl';
-    } else {
-      // change dir ltr
-      document.documentElement.dir = 'ltr';
+  constructor() {
+    if (isPlatformBrowser(this.platformId)) {
+      const savedLang = localStorage.getItem('lang') || 'en';
+
+      this.translateService.setFallbackLang('en');
+
+      this.translateService.use(savedLang);
+
+      this.setDirection(savedLang);
     }
   }
+  private setDirection(lang: string) {
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+
   changeLanguage(lang: string = 'en'): void {
-    if (isPlatformBrowser(this._PLATFORM_ID)) {
-      localStorage.setItem('lang', lang); //save Language in localStorage
-      this._TranslateService.use(lang);
-      this.changeDirection();
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('lang', lang);
+
+      this.translateService.use(lang);
+
+      this.setDirection(lang);
     }
+  }
+
+  getCurrentLanguage(): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('lang') || 'en';
+    }
+    return 'en';
   }
 }

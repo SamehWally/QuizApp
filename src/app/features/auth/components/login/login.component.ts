@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import {  ILoginResponse } from '../../interfaces/login';
+import { ILoginResponse } from '../../interfaces/login';
 import { ToastService } from '../../../../core/services/toast.service';
 
 @Component({
@@ -23,21 +23,28 @@ export class LoginComponent {
       Validators.pattern(this.PasswordPattern),
     ]),
   });
-  constructor(private _auth: AuthService, private _toast: ToastService,private router:Router) {}
+  constructor(
+    private _auth: AuthService,
+    private _toast: ToastService,
+    private router: Router
+  ) {}
   SubmitForm(data: FormGroup) {
     this._auth.login(data.value).subscribe({
       next: (res: ILoginResponse) => {
         this._toast.showSuccess('login success');
-        localStorage.setItem('token',res.data.accessToken);
-
-        localStorage.setItem("refreshToken", res.data.refreshToken);
-        localStorage.setItem('role',res.data.profile.role);
-
-
+        localStorage.setItem('userToken', res.data.accessToken);
+        localStorage.setItem('refreshToken', res.data.refreshToken);
+        localStorage.setItem('_id', res.data.profile._id);
+        localStorage.setItem(
+          'name',
+          res.data.profile.first_name + ` ` + res.data.profile.last_name
+        );
+        localStorage.setItem('email', res.data.profile.email);
+        localStorage.setItem('role', res.data.profile.role);
       },
-      complete:()=>{
-        this.router.navigate(['/dashboard'])
-      }
+      complete: () => {
+        this.router.navigate(['/dashboard']);
+      },
     });
   }
 }

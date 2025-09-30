@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MyTranslateService } from '../../core/services/my-translate.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,12 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent {
-  language:string='En';
-  changeLanguage(){
-  if(this.language == 'En'){
-    this.language='Ar';
-  }else{
-    this.language='En';
-  }
+  private readonly _MyTranslateService = inject(MyTranslateService);
+  language: string = 'En';
+  changeLanguage() {
+    if (this.language == 'En') {
+      this.language = 'Ar';
+      this._MyTranslateService.changeLanguage('ar');
+    } else {
+      this.language = 'En';
+      this._MyTranslateService.changeLanguage('en');
+    }
   }
 }

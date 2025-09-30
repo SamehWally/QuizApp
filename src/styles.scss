@@ -1,7 +1,7 @@
 @import "primeicons/primeicons.css";
 
 /* ======================Start Global====================== */
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -13,53 +13,51 @@
 }
 /* ======================End Global====================== */
 /* ======================start auth====================== */
-.auth-button{
+.auth-button {
   background-color: white;
 }
-.auth-title{
+.auth-title {
   margin: 15px 0px;
-  color: #C5D86D;
+  color: #c5d86d;
 }
-.Group-auth-input{
+.Group-auth-input {
   margin: 15px 0px;
   color: white;
-//auth inputs
-.auth-input{
-  width: 100%;
-  background-color: #0d1321 !important;
-  color: white;
+  //auth inputs
+  .auth-input {
+    width: 100%;
+    background-color: #0d1321 !important;
+    color: white;
+  }
+  .p-inputicon {
+    color: white;
+  }
 
-}
-.p-inputicon{
-  color: white;
-}
-
-//password style
-  .password-group{
+  //password style
+  .password-group {
     position: relative;
-    .password-icon{
+    .password-icon {
       position: absolute;
       top: 50%;
       left: 20px;
-      transform: translate(-50% ,-50%);
+      transform: translate(-50%, -50%);
       color: white;
       z-index: 9999;
     }
     .p-password {
-    width: 100%;
-    .p-inputtext{
+      width: 100%;
+      .p-inputtext {
         width: 100%;
         background-color: #0d1321 !important;
         color: white;
         text-indent: 40px;
+      }
     }
   }
-  }
-
 }
 // auth-submit button
-.auth-submit{
-  button{
+.auth-submit {
+  button {
     background-color: white;
     color: black;
     border-radius: 10px;
@@ -70,7 +68,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    i{
+    i {
       background-color: #0d1321;
       color: white;
       border-radius: 50%;
@@ -79,19 +77,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
     }
   }
 }
 // auth-errors
-.auth-errors{
-  span{
+.auth-errors {
+  span {
     font-size: 13px;
   }
 }
 /* ======================End auth====================== */
 
-.language-btn{
+.language-btn {
   padding: 2px 15px;
   background-color: transparent;
   color: white;

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { PrimeIcons } from 'primeng/api';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [SidebarComponent],
-  imports: [CommonModule, RouterModule],
-  exports: [SidebarComponent],
+  imports: [CommonModule, RouterModule, TranslateModule],
+  exports: [SidebarComponent, TranslateModule],
 })
 export class SharedModule {}

@@ -20,7 +20,7 @@ i {
 h3 {
   font-size: 18px;
 }
-.active {
+.activeRight {
   i {
     color: var(--color-auth-secondary) !important;
   }
@@ -37,6 +37,27 @@ h3 {
     position: absolute;
     top: 0px;
     right: 0;
+    height: 100%;
+    width: 7px;
+  }
+}
+.activeLeft {
+  i {
+    color: var(--color-auth-secondary) !important;
+  }
+  .icon {
+    background-color: black;
+  }
+
+  color: white !important;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0;
     height: 100%;
     width: 7px;
   }
