@@ -8,6 +8,9 @@ import { PrimeIcons } from 'primeng/api';
   standalone: false,
 })
 export class SidebarComponent {
+  controlDirection(): string {
+    return localStorage.getItem('lang') === 'ar' ? 'rtl' : 'ltr';
+  }
   isStudent(): boolean {
     return localStorage.getItem('role') === 'Student' ? true : false;
   }
@@ -16,25 +19,25 @@ export class SidebarComponent {
   }
   menu: any[] = [
     {
-      title: 'Dashboard',
+      title: 'dashboard.Dashboard',
       icon: 'fa-grip',
       menuLink: '/dashboard/instructor/homeInstructor',
       isActive: this.isInstructor(),
     },
     {
-      title: 'Groups',
+      title: 'dashboard.Groups',
       icon: 'fa-user-group',
       menuLink: '/dashboard/instructor/groups',
       isActive: this.isInstructor(),
     },
     {
-      title: 'Quizzes',
+      title: 'dashboard.Quizzes',
       icon: 'fa-clock',
       menuLink: '/dashboard/instructor/quizzes',
       isActive: this.isInstructor(),
     },
     {
-      title: 'Results',
+      title: 'dashboard.Results',
       icon: ' fa-square-poll-vertical',
       menuLink: '/dashboard/instructor/results',
       isActive: this.isInstructor(),

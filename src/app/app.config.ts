@@ -32,6 +32,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(withEventReplay()),
     provideToastr(),
+    provideClientHydration(),
     provideAnimations(),
     provideTranslateService({
       loader: provideTranslateHttpLoader({
@@ -47,6 +48,6 @@ export const appConfig: ApplicationConfig = {
         preset: Aura,
       },
     }),
-    MessageService
+    MessageService,
   ],
 };

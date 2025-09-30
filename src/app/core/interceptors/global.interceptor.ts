@@ -2,14 +2,13 @@ import { HttpInterceptorFn } from '@angular/common/http';
 import { finalize } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { environment } from '../environment/environment';
-
+import { isPlatformBrowser } from '@angular/common';
 export const globalInterceptor: HttpInterceptorFn = (req, next) => {
   const id = inject(PLATFORM_ID);
   let userToken = '';
   if (isPlatformBrowser(id)) {
-    userToken = localStorage.getItem('token') || '';
+    userToken = localStorage.getItem('userToken') || '';
   }
   const spinner = inject(NgxSpinnerService);
   spinner.show();
@@ -18,13 +17,11 @@ export const globalInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   const token = localStorage.getItem('userToken');
-console.log("User Token: ", userToken);
+
   const myReq = req.clone({
     url: environment.ServerUrl + req.url,
-    
     setHeaders: {
-      
-      Authorization: `Bearer ${userToken}`,
+      Authorization: `${userToken}`,
     },
   });
 
