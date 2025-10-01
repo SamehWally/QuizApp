@@ -1,1 +1,58 @@
-<p>home-instructor works!</p>
+<div class="container-fluid px-5 py-4">
+    <div class="row g-4 mx-5">
+        <!-- Left Section: Quizzes -->
+        <div class="col-md-7">
+            <div class="quiz-list p-3 bg-white rounded shadow-lg">
+                <div class="title-section">
+                    <h5 class="mb-0">Upcoming 5 quizzes</h5>
+                    <a href="#" class="text-decoration-none text-dark">Quiz directory <span class="icon_success"><i
+                                class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+
+                <!-- Quiz Card -->
+                @for (item of [].constructor(5); track $index) {
+                <div class="quiz-card d-flex align-items-center gap-3">
+                    <img src="./assets/images/Quizimg.svg" alt="quiz">
+                    <div class="quiz-info ms-3">
+                        <h6 class="mb-1">Introduction to computer programming</h6>
+                        <small class="text-muted">12 / 03 / 2023 | 09:00 AM</small><br>
+                        <small>No. of student’s enrolled: 32</small>
+                    </div>
+                    <div class="quiz-open ms-auto">
+                        Open <i class="fa-solid fa-circle-right"></i>
+                    </div>
+                </div>
+                }
+
+
+            </div>
+        </div>
+
+        <!-- Right Section: Students -->
+        <div class="col-md-5">
+            <div class="student-list p-3 bg-white rounded shadow-lg">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0">Top 5 Students</h5>
+                    <a href="#" class="text-decoration-none text-dark">All Students <span class="icon_success"><i
+                                class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+
+                <div *ngFor="let student of students"
+                    class="student-card quiz-card d-flex align-items-center justify-content-between gap-3 mb-3">
+                    <img src="./assets/images/userimg.svg" alt="student">
+                    <div>
+                        <h6 class="mb-1 fa-bold">{{student.first_name}} {{student.last_name}}</h6>
+                        <small>
+                            Group: {{student.group?.name}} |
+                            Average score: {{student.avg_score | number:'1.0-0'}}%
+                        </small>
+                    </div>
+                    <div class="quiz-open ">
+                        Open<i class="fa-solid fa-circle-right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

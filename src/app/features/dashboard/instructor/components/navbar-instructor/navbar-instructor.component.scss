@@ -1,4 +1,14 @@
 .navber {
   height: 80px;
   border-bottom: #dbdbdb 1px solid;
+  .navLogo {
+    height: 100%;
+    border-inline-end: #dbdbdb 1px solid;
+  }
+  h6 {
+    color: var(--color-auth-third);
+  }
+  .languge {
+    cursor: pointer;
+  }
 }
