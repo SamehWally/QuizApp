@@ -4,7 +4,7 @@ import { AuthComponent } from './auth.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthRoutingModule } from './auth-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotComponent } from './components/forgot/forgot.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { ResetComponent } from './components/reset/reset.component';
@@ -13,6 +13,8 @@ import { PasswordModule } from 'primeng/password';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SelectModule } from 'primeng/select';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { TranslatePipe } from '@ngx-translate/core';
     PasswordModule,
     IconField,
     InputIcon,
-    TranslatePipe
+    TranslatePipe,
+    SelectModule,
+    FormsModule,
+    DropdownModule
 ],
 
 })

@@ -1,1 +1,53 @@
-<p>forgot works!</p>
+<section>
+  <h4 class="auth-title">{{ "forgot.contnent" | translate }}</h4>
+
+  <div class="auth-form">
+    <form [formGroup]="forgotForm" (ngSubmit)="SubmitForm(forgotForm)">
+      <!-- email input -->
+      <div class="Group-auth-input">
+        <label for="email" class="my-1">{{ "login.email" | translate }}</label>
+        <p-iconfield>
+          <p-inputicon styleClass="pi pi-user" />
+          <input
+            pInputText
+            id="email"
+            formControlName="email"
+            placeholder="{{ 'login.email' | translate }}"
+            class="auth-input"
+          />
+        </p-iconfield>
+
+        <div class="auth-errors">
+          @if(forgotForm.get('email')?.hasError('required') &&
+          forgotForm.get('email')?.touched){
+          <span class="text-danger">{{
+            "login.emailErrorRequired" | translate
+          }}</span>
+          } @if(forgotForm.get('email')?.hasError('email') &&
+          forgotForm.get('email')?.touched){
+          <span class="text-danger">{{
+            "login.validEmailError" | translate
+          }}</span>
+          }
+        </div>
+      </div>
+
+      <!-- submit button -->
+      <div class="row align-items-center">
+        <div class="col-6">
+          <div class="auth-submit">
+            <button type="submit">
+              {{ "login.signIn" | translate }} <i class="pi pi-check"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-6" [ngClass]="lang == 'en' ? 'text-end' : 'text-start'">
+          <a routerLink="/auth/forgot" class="forgot"
+            >{{ "login.Forgot" | translate }}
+            <span>{{ "login.clickHere" | translate }}</span></a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
