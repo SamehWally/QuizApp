@@ -25,6 +25,12 @@ export class SidebarComponent {
       isActive: this.isInstructor(),
     },
     {
+      title: 'dashboard.students',
+      icon: 'fa-graduation-cap',
+      menuLink: '/dashboard/instructor/student',
+      isActive: this.isInstructor(),
+    },
+    {
       title: 'dashboard.Groups',
       icon: 'fa-user-group',
       menuLink: '/dashboard/instructor/groups',
