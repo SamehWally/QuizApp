@@ -1,68 +1,49 @@
-li {
-  border-bottom: #dbdbdb 1px solid;
-}
-.icon {
-  width: 45px;
-  height: 45px;
-  background-color: var(--color-auth-secondary);
-  border-radius: 10px;
-}
-
-i {
-  width: 45px;
-  height: 45px;
-  font-size: 30px;
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-h3 {
-  font-size: 18px;
-}
-.activeRight {
-  i {
-    color: var(--color-auth-secondary) !important;
+.sidebar {
+  border-inline-end: 2px solid #dbdbdb;
+  li {
+    border-bottom: #dbdbdb 1px solid;
   }
   .icon {
-    background-color: black;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-auth-secondary);
+    border-radius: 10px;
   }
 
-  color: white !important;
-  position: relative;
-
-  &::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    top: 0px;
-    right: 0;
-    height: 100%;
-    width: 7px;
-  }
-}
-.activeLeft {
   i {
-    color: var(--color-auth-secondary) !important;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .icon {
-    background-color: black;
+  h3 {
+    font-size: 18px;
   }
-
-  color: white !important;
-  position: relative;
-
-  &::before {
+  .active {
+    position: relative;
+    background-color: #f0f8ff;
+    .icon {
+      background-color: black;
+    }
+    i {
+      color: var(--color-auth-secondary);
+    }
+  }
+  .active::after {
     content: "";
-    background-color: black;
     position: absolute;
-    top: 0px;
-    left: 0;
-    height: 100%;
+    top: 0;
+    bottom: 0;
     width: 7px;
+    background-color: black;
+    inset-inline-end: 0;
   }
-}
-.sidebarTop {
-  border-bottom: #dbdbdb 1px solid;
-  height: 80px;
+
+  .sidebarTop {
+    border-bottom: #dbdbdb 1px solid;
+    height: 80px;
+  }
 }
