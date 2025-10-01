@@ -5,17 +5,24 @@
     "Quizzes": "Quizzes",
     "Results": "Results"
   },
-  "login":{
-    "contnent":"Continue your learning journey with QuizWiz!",
-    "signIn":"Sign in",
-    "sigUp":"Sign Up",
-    "email":"Registered email address",
-    "password":"Password",
-    "Forgot":"Forgot Password?",
-    "clickHere":"Click here",
-    "emailErrorRequired":"Email is required",
-    "validEmailError":"Please enter a valid email",
-    "passwordRequired":"Password is required",
-    "passwordErrorPattern":"Password must contain uppercase, lowercase, number, symbol (max 10 chars)"
+  "login": {
+    "contnent": "Continue your learning journey with QuizWiz!",
+    "signIn": "Sign in",
+    "sigUp": "Sign Up",
+    "email": "Registered email address",
+    "password": "Password",
+    "Forgot": "Forgot Password?",
+    "clickHere": "Click here",
+    "emailErrorRequired": "Email is required",
+    "validEmailError": "Please enter a valid email",
+    "passwordRequired": "Password is required",
+    "passwordErrorPattern": "Password must contain uppercase, lowercase, number, symbol (max 10 chars)"
+  },
+  "navbar_dropdown": {
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "logout": "Logout",
+    "newQuiz": "New Quiz"
+
   }
 }
