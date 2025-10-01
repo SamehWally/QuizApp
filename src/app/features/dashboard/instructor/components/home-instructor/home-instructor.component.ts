@@ -9,9 +9,17 @@ import { ITopFive } from '../../interfaces/ITopFive';
   styleUrl: './home-instructor.component.scss',
 })
 export class HomeInstructorComponent implements OnInit {
-  private readonly _InstructorService = inject(InstructorService);
+  //#region Services
+  private _InstructorService = inject(InstructorService);
+  //#endregion Services
+
+  //#region Properties
   students: ITopFive[] = [];
   Quizzes: any[] = [];
+
+  //#endregion Properties
+
+  //#region Methods
   getTopFiveStudents() {
     this._InstructorService.getTopFiveStudents().subscribe({
       next: (res: ITopFive[]) => {
@@ -28,8 +36,16 @@ export class HomeInstructorComponent implements OnInit {
       },
     });
   }
+  controlDirection(): 'rtl' | 'ltr' {
+    const lang = localStorage.getItem('lang') || 'en';
+    return lang === 'ar' ? 'rtl' : 'ltr';
+  }
+  //#endregion Methods
+
+  //#region Lifecycle Hooks
   ngOnInit(): void {
     this.getTopFiveStudents();
     this.getTopFiveQuizzes();
   }
+  //#endregion Lifecycle Hooks
 }

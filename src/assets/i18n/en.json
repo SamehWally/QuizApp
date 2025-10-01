@@ -3,7 +3,8 @@
     "Dashboard": "Dashboard",
     "Groups": "Groups",
     "Quizzes": "Quizzes",
-    "Results": "Results"
+    "Results": "Results",
+    "students": "Students"
   },
   "login": {
     "contnent": "Continue your learning journey with QuizWiz!",
@@ -22,7 +23,8 @@
     "profile": "Profile",
     "changePassword": "Change Password",
     "logout": "Logout",
-    "newQuiz": "New Quiz"
+    "newQuiz": "New Quiz",
+    "Dashboard": "Dashboard"
   },
   "register": {
     "contnent": "Create your account and start using QuizWiz!",
@@ -42,5 +44,14 @@
   },
   "forgot": {
     "contnent": "Forgot password"
+  },
+  "home": {
+    "open": "Open",
+    "Upcoming5quizzes": "Upcoming 5 quizzes",
+    "topStudent": "Top 5 Students",
+    "aLLstudent": "All Students",
+    "QuizDirectory": "Quiz directory",
+    "Group": "Group",
+    "AverageScore": "Average score"
   }
 }

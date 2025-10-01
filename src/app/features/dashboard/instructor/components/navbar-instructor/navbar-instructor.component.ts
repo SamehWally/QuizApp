@@ -11,7 +11,7 @@ import { MyTranslateService } from '../../../../../core/services/my-translate.se
 })
 export class NavbarInstructorComponent {
   //#region Properties
-  language: string = 'En';
+  language: string =this.getLanguage();
   //#endregion Properties
 
   //#region Services
@@ -24,6 +24,9 @@ export class NavbarInstructorComponent {
   }
   getUserRole(): string {
     return localStorage.getItem('role') ?? '';
+  }
+  getLanguage(): string {
+    return localStorage.getItem('lang') ?? 'en';
   }
 
   changeLanguage() {

@@ -3,7 +3,8 @@
     "Dashboard": "لوحة التحكم",
     "Groups": "المجموعات",
     "Quizzes": "الاختبارات",
-    "Results": "النتائج"
+    "Results": "النتائج",
+    "students": "الطلاب"
   },
   "login": {
     "contnent": "واصل رحلة تعلمك مع QuizWiz!",
@@ -22,7 +23,8 @@
     "profile": "الملف الشخصي",
     "changePassword": "تغيير كلمة المرور",
     "logout": "تسجيل الخروج",
-    "newQuiz": "اختبار جديد"
+    "newQuiz": "اختبار جديد",
+    "Dashboard": "لوحة التحكم"
   },
   "register": {
     "contnent": "قم بإنشاء حسابك وابدأ باستخدام QuizWiz!",
@@ -36,5 +38,14 @@
     "validEmailError": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا",
     "passwordRequired": "كلمة المرور مطلوبة",
     "passwordErrorPattern": "كلمة المرور يجب أن تحتوي على حرف كبير، حرف صغير، رقم، ورمز (بحد أقصى 10 أحرف)"
+  },
+  "home": {
+    "open": "فتح",
+    "Upcoming5quizzes": "5 اختبارات قادمة",
+    "topStudent": "أفضل 5 طلاب",
+    "aLLstudent": "جميع الطلاب",
+    "QuizDirectory": "دليل الاختبارات",
+    "Group": "المجموعة",
+    "AverageScore": "متوسط النتيجة"
   }
 }

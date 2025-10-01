@@ -1,15 +1,15 @@
 <div class="container-fluid px-5 py-4">
     <div class="row g-4 mx-5">
-        <!-- Left Section: Quizzes -->
-        <div class="col-md-7">
+        <div class="col-md-6">
             <div class="quiz-list p-3 bg-white rounded shadow-lg">
                 <div class="title-section">
-                    <h5 class="mb-0">Upcoming 5 quizzes</h5>
-                    <a href="#" class="text-decoration-none text-dark">Quiz directory <span class="icon_success"><i
-                                class="fa-solid fa-arrow-right"></i></span></a>
+                    <h5 class="mb-0">{{'home.Upcoming5quizzes'|translate}}</h5>
+                    <a href="#" class="text-decoration-none text-dark">{{'home.QuizDirectory'|translate}}
+                        <span class="icon_success"><i
+                                [ngClass]="controlDirection() === 'rtl' ? 'fa-solid fa-arrow-left' : 'fa-solid fa-arrow-right'"></i>
+                        </span></a>
                 </div>
 
-                <!-- Quiz Card -->
                 @for (item of [].constructor(5); track $index) {
                 <div class="quiz-card d-flex align-items-center gap-3">
                     <img src="./assets/images/Quizimg.svg" alt="quiz">
@@ -19,7 +19,8 @@
                         <small>No. of student’s enrolled: 32</small>
                     </div>
                     <div class="quiz-open ms-auto">
-                        Open <i class="fa-solid fa-circle-right"></i>
+                        {{'home.open'|translate}} <i
+                            [ngClass]="controlDirection() === 'rtl' ? 'fa-solid fa-circle-left' : 'fa-solid fa-circle-right'"></i>
                     </div>
                 </div>
                 }
@@ -28,13 +29,14 @@
             </div>
         </div>
 
-        <!-- Right Section: Students -->
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="student-list p-3 bg-white rounded shadow-lg">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="mb-0">Top 5 Students</h5>
-                    <a href="#" class="text-decoration-none text-dark">All Students <span class="icon_success"><i
-                                class="fa-solid fa-arrow-right"></i></span></a>
+                    <h5 class="mb-0">{{'home.topStudent'|translate}}</h5>
+                    <a href="#" class="text-decoration-none text-dark">{{'home.aLLstudent'|translate}}<span
+                            class="icon_success"><i
+                                [ngClass]="controlDirection() === 'rtl' ? 'fa-solid fa-arrow-left' : 'fa-solid fa-arrow-right'"></i>
+                        </span></a>
                 </div>
 
                 <div *ngFor="let student of students"
@@ -46,14 +48,16 @@
                             <div>
                                 <h6 class="mb-1 fa-bold">{{student.first_name}} {{student.last_name}}</h6>
                                 <small>
-                                    Group: {{student.group?.name}} |
-                                    Average score: {{student.avg_score | number:'1.0-0'}}%
+                                    {{"home.Group"|translate}}: {{student.group?.name}} |
+                                    {{"home.AverageScore"|translate}}: {{student.avg_score | number:'1.0-0'}}%
                                 </small>
                             </div>
                         </div>
                     </div>
                     <div class="quiz-open ">
-                        Open<i class="fa-solid fa-circle-right"></i>
+                        {{'home.open'|translate}}<i
+                            [ngClass]="controlDirection() === 'rtl' ? 'fa-solid fa-circle-left' : 'fa-solid fa-circle-right'"></i>
+
                     </div>
                 </div>
             </div>
