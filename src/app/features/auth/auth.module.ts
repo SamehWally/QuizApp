@@ -12,6 +12,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { InputIcon } from 'primeng/inputicon';
     InputTextModule,
     PasswordModule,
     IconField,
-    InputIcon
-]
+    InputIcon,
+    TranslatePipe
+],
+
 })
 export class AuthModule {}

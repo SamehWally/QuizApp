@@ -36,7 +36,7 @@
   //password style
   .password-group {
     position: relative;
-    .password-icon {
+    .password-icon-ltr {
       position: absolute;
       top: 50%;
       left: 20px;
@@ -44,13 +44,22 @@
       color: white;
       z-index: 9999;
     }
+    .password-icon-rtl {
+      position: absolute;
+      top: 50%;
+      right: 7px;
+      transform: translate(-50%, -50%);
+      color: white;
+      z-index: 9999;
+
+    }
     .p-password {
       width: 100%;
       .p-inputtext {
         width: 100%;
         background-color: #0d1321 !important;
         color: white;
-        text-indent: 40px;
+        text-indent: 30px;
       }
     }
   }

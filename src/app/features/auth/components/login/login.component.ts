@@ -4,6 +4,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ILoginResponse } from '../../interfaces/login';
 import { ToastService } from '../../../../core/services/toast.service';
+import { MyTranslateService } from '../../../../core/services/my-translate.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -12,10 +14,10 @@ import { ToastService } from '../../../../core/services/toast.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  iconStyle:string='password-icon-ltr';
+  lang:string='en';
   PasswordPattern: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{1,10}$/;
-  passwordError: string =
-    'Password must contain uppercase, lowercase, number, symbol (max 10 chars)';
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [
@@ -26,8 +28,21 @@ export class LoginComponent {
   constructor(
     private _auth: AuthService,
     private _toast: ToastService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {}
+  ngOnInit(): void {
+    this.translate.onLangChange.subscribe((event: any) => {
+       if(event.lang=='ar'){
+      this.iconStyle='password-icon-rtl'
+      this.lang='ar';
+        }else{
+        this.iconStyle='password-icon-ltr'
+        this.lang='en';
+    }
+    });
+
+  }
   SubmitForm(data: FormGroup) {
     this._auth.login(data.value).subscribe({
       next: (res: ILoginResponse) => {
