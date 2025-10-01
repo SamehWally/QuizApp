@@ -1,15 +1,13 @@
-<section class="p-0 m-0 d-flex flex-column align-items-start vh-100 "
-    [ngClass]="controlDirection() === 'rtl' ? 'border-start' : 'border-end'">
-    <div class="w-100 ">
+<section class="p-0 m-0 d-flex flex-column align-items-start vh-100 sidebar"> 
+    <div class="w-100">
         <div class="sidebarTop d-flex align-items-center justify-content-between p-3">
             <div><i class="fa-solid fa-bars"></i></div>
             <div><img src="/Logo icon.svg" alt="" class="w-100"></div>
         </div>
-        <ul class="list-unstyled ">
+        <ul class="list-unstyled">
             <li *ngFor="let item of menu">
-                <a *ngIf="item.isActive" [routerLink]="item.menuLink" routerLinkActive #rla="routerLinkActive"
-                    [ngClass]="rla.isActive ? (controlDirection() === 'rtl' ? 'activeLeft' : 'activeRight') : ''"
-                    class="d-flex align-items-center gap-3 text-decoration-none py-3 px-3  rounded flex-nowrap">
+                <a *ngIf="item.isActive" [routerLink]="item.menuLink" routerLinkActive="active"
+                    class="d-flex align-items-center gap-3 text-decoration-none py-3 px-3 rounded flex-nowrap">
 
                     <span class="icon flex-shrink-0">
                         <i class="fa-solid" [ngClass]="item.icon"></i>
@@ -18,9 +16,6 @@
                     <h3 class="title text-dark m-0 text-truncate">{{ item.title|translate }}</h3>
                 </a>
             </li>
-
-
-
         </ul>
     </div>
 </section>
