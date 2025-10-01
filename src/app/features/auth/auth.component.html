@@ -1,6 +1,6 @@
 <section class="auth-section py-3">
     <div class="container">
-        <div class="auth-logo">
+        <div class="auth-logo" [ngClass]="authLogoStyle">
             <img src="/21f55ffc00bf14d8ecd3b636e92fe90d144bca0d.png" alt="">
             <button class="language-btn" (click)="changeLanguage()">
                 <i class="pi pi-globe"></i>
@@ -8,11 +8,11 @@
             </button>
         </div>
         <div class="row  justify-content-between align-items-center">
-            <div class="col-12 col-lg-5 pt-5">
+            <div class="col-12 col-lg-6 pt-5 ">
                 <router-outlet></router-outlet>
             </div>
-            <div class="col-12 col-lg-5 d-none d-md-none d-lg-block">
-                <img src="/Image.png" alt="" class="w-100">
+            <div class="col-12 col-lg-6 d-none d-md-none d-lg-block" [ngClass]="language == 'Ar' ? 'text-start':'text-end'">
+                <img src="/Image.png" alt="" class="main-img ">
             </div>
         </div>
     </div>
