@@ -47,5 +47,12 @@
     "QuizDirectory": "دليل الاختبارات",
     "Group": "المجموعة",
     "AverageScore": "متوسط النتيجة"
+  },
+  "student": {
+    "StudentsList": "قائمة الطلاب",
+    "SelectGroup": "اختر مجموعة",
+    "AddStudent": "إضافة طالب",
+    "PleaseSelectGroupToViewStudents": "يرجى اختيار مجموعة لعرض الطلاب",
+    "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة"
   }
 }
