@@ -3,10 +3,34 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule } from '@angular/forms';
+
+// PrimeNG
+import { DropdownModule } from 'primeng/dropdown';
+import { ButtonModule } from 'primeng/button';
+import { PaginatorModule } from 'primeng/paginator';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [SidebarComponent],
-  imports: [CommonModule, RouterModule, TranslateModule],
-  exports: [SidebarComponent, TranslateModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TranslateModule,
+    FormsModule,
+    DropdownModule,
+    ButtonModule,
+    PaginatorModule,
+    MessageModule,
+  ],
+  exports: [
+    SidebarComponent,
+    TranslateModule,
+    FormsModule,
+    DropdownModule,
+    ButtonModule,
+    PaginatorModule,
+    MessageModule,
+  ],
 })
 export class SharedModule {}

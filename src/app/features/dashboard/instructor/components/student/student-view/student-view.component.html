@@ -1,0 +1,57 @@
+<div class="student-main p-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="m-0">{{"student.StudentsList"|translate}}</h3>
+        <button class="btn btn-outline-dark rounded-5 px-4 py-2">
+            {{"student.AddStudent"|translate}}
+            <i class="fa-solid fa-circle-plus fa-lg"></i>
+        </button>
+    </div>
+
+    <div class="p-5 border border-dark-subtle rounded-3">
+        <div class="mb-3 w-100">
+            <p-dropdown [options]="groups" [(ngModel)]="selectedGroupId" optionLabel="name" optionValue="_id"
+                placeholder="Select Group" class="w-50"></p-dropdown>
+        </div>
+        @if (selectedGroupId && filteredStudents.length >= 0) {
+        <div class="row">
+            <div class="col-md-6" *ngFor="let student of paginatedStudents">
+                <div class="student-card d-flex align-items-center justify-content-between gap-3 mb-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="./assets/images/userimg.svg" alt="student" class="student-img" />
+                        <div>
+                            <h6 class="mb-1 fw-bold">
+                                {{ student.first_name }} {{ student.last_name }}
+                            </h6>
+                            <small>
+                                {{ "home.Group" | translate }}: {{ student.group?.name }} |
+                                {{ "home.AverageScore" | translate }}:
+                                {{ student.avg_score | number : "1.0-0" }}%
+                            </small>
+                        </div>
+                    </div>
+                    <div class="quiz-open">
+                        {{ "home.open" | translate }}
+                        <i [ngClass]="
+                  controlDirection() === 'rtl'
+                    ? 'fa-solid fa-circle-left'
+                    : 'fa-solid fa-circle-right'
+                "></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-content-center">
+                <p-paginator [rows]="rows" [totalRecords]="filteredStudents.length"
+                    (onPageChange)="onPageChange($event)"></p-paginator>
+            </div>
+        </div>
+        }@else if(selectedGroupId && filteredStudents.length === 0){
+        <p *ngIf="selectedGroupId && filteredStudents.length === 0" class="text-danger">
+            {{"student.NoStudentsInThisGroup"|translate}}
+        </p>
+        }@else {
+        <p *ngIf="!selectedGroupId" class="text-danger">
+            {{"student.PleaseSelectGroupToViewStudents"|translate}}
+            }
+    </div>
+
+</div>

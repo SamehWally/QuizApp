@@ -53,5 +53,12 @@
     "QuizDirectory": "Quiz directory",
     "Group": "Group",
     "AverageScore": "Average score"
+  },
+  "student": {
+    "StudentsList": "Students list",
+    "SelectGroup": "Select Group",
+    "AddStudent": "Add Student",
+    "PleaseSelectGroupToViewStudents": "Please select a group to view students",
+    "NoStudentsInThisGroup": "No students in this group"
   }
 }
