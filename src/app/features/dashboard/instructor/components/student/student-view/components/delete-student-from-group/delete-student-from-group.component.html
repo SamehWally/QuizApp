@@ -1,0 +1,30 @@
+<div class="container-fluid w-100 h-auto">
+    <div class="row border-bottom text-center">
+        <div class="col-8 border-start py-3">
+            <span>{{"deleteStudentFromGroup.DeleteStudent"|translate}}</span>
+
+        </div>
+        <div (click)="deleteStudentFromGroup()" class="col-2 border-start py-3 IconSave">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div (click)="close()" class="col-2 border-start py-3 IconClose ">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="text-center my-4">
+        <img src="./assets/images/user.png" class="w-50 m-auto" alt="">
+    </div>
+    <div>
+        <hr>
+        <h6 class="py-3"><i class="fa-solid fa-graduation-cap"></i> {{"deleteStudentFromGroup.student"|translate}}<span
+                class="text-danger">{{studentData.first_name}}
+                {{studentData.last_name}}</span> </h6>
+        <h6><i class="fa-solid fa-users-rectangle"></i>{{"deleteStudentFromGroup.group"|translate}}<span>{{studentData.group?.name}}
+                {{studentData.last_name}}</span> </h6>
+        <h5 class="text-center py-4">{{"deleteStudentFromGroup.AreYouSure"|translate}}</h5>
+    </div>
+
+
+
+
+</div>

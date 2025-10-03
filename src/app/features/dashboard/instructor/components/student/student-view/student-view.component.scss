@@ -29,8 +29,23 @@
     cursor: pointer;
 
     i {
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+    i:hover {
       color: var(--color-auth-third);
       font-size: 18px;
     }
+    .iconDelete:hover {
+      color: red;
+    }
   }
+}
+
+:host ::ng-deep .p-dialog .p-dialog-header {
+  padding: 0 !important;
+}
+:host ::ng-deep .p-dialog .p-dialog-content {
+  overflow: visible !important;
+  padding: 0 !important;
 }
