@@ -39,6 +39,9 @@
     "passwordRequired": "كلمة المرور مطلوبة",
     "passwordErrorPattern": "كلمة المرور يجب أن تحتوي على حرف كبير، حرف صغير، رقم، ورمز (بحد أقصى 10 أحرف)"
   },
+  "forgot": {
+    "contnent": "نسيت كلمة المرور"
+  },
   "home": {
     "open": "فتح",
     "Upcoming5quizzes": "5 اختبارات قادمة",
@@ -53,21 +56,19 @@
     "SelectGroup": "اختر مجموعة",
     "AddStudent": "إضافة طالب",
     "PleaseSelectGroupToViewStudents": "يرجى اختيار مجموعة لعرض الطلاب",
-    "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة"
-  },
- "group": {
-  "addButtun": "إضافة مجموعة",
-  "group": "المجموعة",
-  "noOfStudents": "عدد الطلاب:",
-  "AddGroup": "إنشاء مجموعة جديدة",
-  "updateGroup": "تعديل المجموعة",
-  "deleteGroup": "حذف المجموعة",
-  "groupName": "اسم المجموعة",
-  "studentList": "قائمة الطلاب"
-}
     "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة",
     "delete": "حذف",
     "edit": "تعديل"
+  },
+  "group": {
+    "addButtun": "إضافة مجموعة",
+    "group": "المجموعة",
+    "noOfStudents": "عدد الطلاب:",
+    "AddGroup": "إنشاء مجموعة جديدة",
+    "updateGroup": "تعديل المجموعة",
+    "deleteGroup": "حذف المجموعة",
+    "groupName": "اسم المجموعة",
+    "studentList": "قائمة الطلاب"
   },
   "addEditStudent": {
     "AddStudent": "إضافة طالب",
@@ -84,19 +85,17 @@
     "group": "المجموعة:",
     "AreYouSure": "هل أنت متأكد أنك تريد الحذف؟"
   },
-  "shange-password":{
+  "shange-password": {
     "contnent": "تغيير كلمة المرور",
-    "password":"الباسورد الحالي",
-    "new-password":"الباسورد الجديد",
-    "Change":"تغيير"
+    "password": "الباسورد الحالي",
+    "new-password": "الباسورد الجديد",
+    "Change": "تغيير"
   },
-   "reset":{
+  "reset": {
     "contnent": "إعادة تعيين كلمة المرور",
-    "new-password":"الباسورد الجديد",
-    "email":"البريد الإلكتروني المسجل",
-    "otp":"كلمة مرور لمرة واحدة",
-    "Reset":"إعادة ضبط"
+    "new-password": "الباسورد الجديد",
+    "email": "البريد الإلكتروني المسجل",
+    "otp": "كلمة مرور لمرة واحدة",
+    "Reset": "إعادة ضبط"
   }
-  
-
 }
