@@ -77,5 +77,18 @@
     "student": " Student:",
     "group": " Group:",
     "AreYouSure": "Are you sure you want to remove?"
+  },
+    "shange-password":{
+    "contnent": "Shange password",
+    "password":"paswword",
+    "new-password":"new password",
+    "Change":"Change"
+  },
+    "reset":{
+    "contnent": "Reset password" ,
+    "new-password":"new password",
+    "email":"email",
+    "otp":"otp",
+     "Reset":"Reset"
   }
 }
