@@ -1,3 +1,4 @@
+import { ChangePassword } from './../../interfaces/change-password';
 import { Component } from '@angular/core';
 // import { Router } from '@angular/router';
 
@@ -18,7 +19,7 @@ export class ChangePasswordComponent {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{1,10}$/;
   passwordError: string =
     'Password must contain uppercase, lowercase, number, symbol (max 10 chars)';
-  loginForm: FormGroup = new FormGroup({
+  ChangePasswordForm: FormGroup = new FormGroup({
     password_new: new FormControl(null, [Validators.required, Validators.pattern(this.PasswordPattern) ]),
     password: new FormControl(null, [
       Validators.required,

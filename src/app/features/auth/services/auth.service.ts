@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ILoginReq, ILoginResponse } from '../interfaces/login';
+import { Reset } from '../interfaces/reset';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +23,8 @@ export class AuthService {
 
   forgot(data: any): Observable<any> {
     return this._http.post('auth/forgot-password', data);
+  }
+    reset(data: Reset): Observable<any> {
+    return this._http.post('auth/reset-password', data);
   }
 }
