@@ -1,1 +1,29 @@
-<p>groups-view works!</p>
+<div class="container mt-5">
+    <div class="groupe-section">
+        <div class="row py-3 g-3">
+            <div class="col-md-12">
+                <button class="add-group-btn ms-auto" (click)="createGroup()"><i class="pi pi-plus-circle"></i> {{'group.addButtun' |translate}}</button>
+            </div>
+        @for (group of groups; track $index) {
+               <div class="col-md-6">
+                 <div class="group-card">
+                <div class="group-data">
+                    <h5>
+                        {{'group.group' |translate}} : {{group.name}}
+                    </h5>
+                    <p class="text-muted">{{'group.noOfStudents' |translate}} {{group.students.length}}</p>
+                </div>
+                <div class="group-actions">
+                    <button (click)="EditGroup(group._id)">
+                        <i class="pi pi-pen-to-square"></i>
+                    </button>
+                    <button (click)="deleteGroup(group._id)">
+                        <i class="pi pi-trash"></i>
+                    </button>
+                </div>
+            </div>
+            </div>
+        }
+        </div>
+    </div>
+</div>

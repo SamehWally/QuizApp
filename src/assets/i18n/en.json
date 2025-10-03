@@ -60,5 +60,16 @@
     "AddStudent": "Add Student",
     "PleaseSelectGroupToViewStudents": "Please select a group to view students",
     "NoStudentsInThisGroup": "No students in this group"
+  },
+    "group":{
+    "add-buttun":"Add Group",
+    "group":"Group",
+    "noOfStudents":"No. of students:",
+    "AddGroup":"Set up a new Group",
+    "updateGroup":"Update Group",
+    "deleteGroup":"Delete Group",
+    "groupName":"Groupe Name",
+    "studentList":"Student List"
   }
+
 }
