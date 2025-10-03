@@ -70,6 +70,24 @@
     "deleteGroup":"Delete Group",
     "groupName":"Groupe Name",
     "studentList":"Student List"
+    "NoStudentsInThisGroup": "No students in this group",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "addEditStudent": {
+    "AddStudent": "Add Student",
+    "EditStudent": "Edit Student",
+    "SelectStudent": "Student Name",
+    "SelectGroup": "Student Group",
+    "placeholderStudent": "Select Student Name",
+    "placeholderGroup": "Select Group Name",
+    "PleaseSelectBothStudentAndGroup": "Please select both student and group."
+  },
+  "deleteStudentFromGroup": {
+    "DeleteStudent": "Delete Student",
+    "student": " Student:",
+    "group": " Group:",
+    "AreYouSure": "Are you sure you want to remove?"
   }
 
 }

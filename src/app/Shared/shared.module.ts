@@ -10,6 +10,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
 import { MessageModule } from 'primeng/message';
+import { Dialog } from 'primeng/dialog';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [SidebarComponent],
@@ -22,6 +24,8 @@ import { MessageModule } from 'primeng/message';
     ButtonModule,
     PaginatorModule,
     MessageModule,
+    Dialog,
+    AutoCompleteModule,
   ],
   exports: [
     SidebarComponent,
@@ -31,6 +35,8 @@ import { MessageModule } from 'primeng/message';
     ButtonModule,
     PaginatorModule,
     MessageModule,
+    Dialog,
+    AutoCompleteModule,
   ],
 })
 export class SharedModule {}

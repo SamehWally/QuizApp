@@ -1,13 +1,15 @@
-<div class="student-main p-5">
+<div class="student-main py-3 px-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="m-0">{{"student.StudentsList"|translate}}</h3>
-        <button class="btn btn-outline-dark rounded-5 px-4 py-2">
+        <button (click)="showDialog({},1)" class="btn btn-outline-dark rounded-5 px-4 py-2">
             {{"student.AddStudent"|translate}}
             <i class="fa-solid fa-circle-plus fa-lg"></i>
         </button>
     </div>
 
-    <div class="p-5 border border-dark-subtle rounded-3">
+
+
+    <div class="pt-3 px-5 border border-dark-subtle rounded-3">
         <div class="mb-3 w-100">
             <p-dropdown [options]="groups" [(ngModel)]="selectedGroupId" optionLabel="name" optionValue="_id"
                 placeholder="Select Group" class="w-50"></p-dropdown>
@@ -30,12 +32,24 @@
                         </div>
                     </div>
                     <div class="quiz-open">
-                        {{ "home.open" | translate }}
-                        <i [ngClass]="
-                  controlDirection() === 'rtl'
-                    ? 'fa-solid fa-circle-left'
-                    : 'fa-solid fa-circle-right'
-                "></i>
+                        <div class="d-flex align-items-center gap-2">
+                            <div>
+                                <i (click)="showDialog(student,2)" class="fa-solid fa-pen-to-square"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    [attr.title]="'student.edit' | translate">
+                                </i>
+                            </div>
+                            <div>
+                                <i (click)="showDeleteDialog(student)" class="fa-solid fa-trash-can iconDelete"
+                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                    [attr.title]="'student.delete' | translate">
+                                </i>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -52,6 +66,24 @@
         <p *ngIf="!selectedGroupId" class="text-danger">
             {{"student.PleaseSelectGroupToViewStudents"|translate}}
             }
+    </div>
+    <div>
+        <p-dialog [(visible)]="visible" [style]="{ width: '25rem'}" (onHide)="getAllStudents()" [closable]="false"
+            [contentStyle]="{ 'padding': '0' }">
+            <ng-container *ngIf="visible">
+                <app-add-edit-student-in-group (closeDialog)="visible=false" [studentData]="selectedStudent"
+                    [FormID]="formID">
+                </app-add-edit-student-in-group>
+            </ng-container> </p-dialog>
+    </div>
+
+    <div>
+        <p-dialog [(visible)]="visibleDelete" [style]="{ width: '25rem'}" (onHide)="getAllStudents()" [closable]="false"
+            [contentStyle]="{ 'padding': '0' }">
+            <ng-container *ngIf="visibleDelete">
+                <app-delete-student-from-group (closeDialog)="visibleDelete=false" [studentData]="selectedStudent">
+                </app-delete-student-from-group>
+            </ng-container> </p-dialog>
     </div>
 
 </div>
