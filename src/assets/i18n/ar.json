@@ -53,6 +53,18 @@
     "SelectGroup": "اختر مجموعة",
     "AddStudent": "إضافة طالب",
     "PleaseSelectGroupToViewStudents": "يرجى اختيار مجموعة لعرض الطلاب",
+    "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة"
+  },
+ "group": {
+  "addButtun": "إضافة مجموعة",
+  "group": "المجموعة",
+  "noOfStudents": "عدد الطلاب:",
+  "AddGroup": "إنشاء مجموعة جديدة",
+  "updateGroup": "تعديل المجموعة",
+  "deleteGroup": "حذف المجموعة",
+  "groupName": "اسم المجموعة",
+  "studentList": "قائمة الطلاب"
+}
     "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة",
     "delete": "حذف",
     "edit": "تعديل"

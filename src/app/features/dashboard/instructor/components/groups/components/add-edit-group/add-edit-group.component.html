@@ -1,0 +1,37 @@
+<div class="header ">
+    <div class="title">
+        @if (isAdd == true) {
+            {{'group.AddGroup' |translate}}
+        }@else {
+            {{'group.updateGroup' |translate}}
+        }
+    </div>
+    <div class="actions">
+        <button class="save" (click)="submitForm()">
+            <i class="pi pi-check"></i>
+        </button>
+        <button (click)="closeModal()">
+            <i class="pi pi-times"></i>
+        </button>
+    </div>
+</div>
+<div class="content mt-5 lang-ar">
+    <form [formGroup]="formsGroups">
+        <div class="group-input">
+            <input type="text" pInputText formControlName="name" class="w-100 input-custom"  />
+            <div class="input-layer">{{'group.groupName' |translate}}</div>
+        </div>
+        <div class="group-input">
+            <p-multiselect
+            [ngStyle]="lang === 'ar'
+                    ? { 'padding-right.px': 100, 'padding-left.px': 0 }
+                    : { 'padding-left.px': 100, 'padding-right.px': 0 }"
+            [options]="students"
+             formControlName="students"
+             optionLabel="first_name"
+             display="chip" optionValue="_id"  class="w-100 " />
+            <div class="input-layer">{{'group.studentList' |translate}}</div>
+        </div>
+    </form>
+
+</div>
