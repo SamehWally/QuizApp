@@ -1,0 +1,17 @@
+:host ::ng-deep .p-autocomplete {
+  width: 100% !important;
+  margin: auto;
+}
+:host ::ng-deep .p-autocomplete-panel {
+  z-index: 9999 !important;
+}
+.IconSave:hover {
+  cursor: pointer;
+  color: green;
+  transition: all 0.5s;
+}
+.IconClose:hover {
+  cursor: pointer;
+  color: red;
+  transition: all 0.5s;
+}
