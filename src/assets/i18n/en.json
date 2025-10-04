@@ -70,7 +70,7 @@
   },
   "quiz": {
     "newQuiz": "Set up a new quiz",
-    "questionBank": "Question Bank"
+    "questionBank": "Question Bank",
     "NoStudentsInThisGroup": "No students in this group",
     "delete": "Delete",
     "edit": "Edit"
