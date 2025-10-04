@@ -1,1 +1,59 @@
 <p>reset works!</p>
+
+<div class="auth-form">
+    <h1>{{"reset.contnent" | translate}}</h1>
+  <form [formGroup]="resetForm" (ngSubmit)="SubmitForm(resetForm)">
+  
+
+     <div class="Group-auth-input ">
+    <label  for="otp" class="my-1">{{"reset.otp" | translate}}</label>
+     <p-iconfield>
+    <p-inputicon styleClass="pi pi-key" />
+    <input pInputText id="otp"  formControlName="otp" placeholder="{{'reset.otp'| translate}}"  class="auth-input"/>
+    </p-iconfield>
+        <div class="auth-errors">
+        @if(resetForm.get('otp')?.hasError('required') && resetForm.get('otp')?.touched){
+            <span class="text-danger ">Password is required</span>
+            }
+            @if(resetForm.get('otp')?.hasError('pattern') && resetForm.get('otp')?.touched){
+            <span class="text-danger ">{{passwordError}}</span>
+            }
+    </div>
+    </div>
+    <div class="Group-auth-input ">
+    <label for="email"  class="my-1">{{"reset.email" | translate}}</label>
+      <p-iconfield>
+    <p-inputicon styleClass="pi pi-user" />
+    <input  pInputText id="email"  formControlName="email"  placeholder="{{'reset.email'| translate}}"  class="auth-input"/>
+    </p-iconfield>
+        <div class="auth-errors">
+        @if(resetForm.get('email')?.hasError('required') && resetForm.get('email')?.touched){
+            <span class="text-danger ">Password is required</span>
+            }
+            @if(resetForm.get('email')?.hasError('pattern') && resetForm.get('email')?.touched){
+            <span class="text-danger ">{{passwordError}}</span>
+            }
+    </div>
+    </div>
+    <!-- password input -->
+    <div class="Group-auth-input password-input">
+    <label  class="my-1">{{"reset.new-password" | translate}}</label>
+    <div class="password-group">
+        <i class="pi pi-key" [ngClass]="iconStyle"></i>
+        <p-password  formControlName="password" placeholder="{{'reset.new-password'| translate}}" [showClear]="true"  [toggleMask]="true" />
+    </div>
+        <div class="auth-errors">
+        @if(resetForm.get('password')?.hasError('required') && resetForm.get('password')?.touched){
+            <span class="text-danger ">Password is required</span>
+            }
+            @if(resetForm.get('password')?.hasError('pattern') && resetForm.get('password')?.touched){
+            <span class="text-danger ">{{passwordError}}</span>
+            }
+    </div>
+    </div>
+    <!-- submit button -->
+     <div class="auth-submit">
+        <button type="submit">{{'reset.Reset' | translate}} <i class="pi pi-check"></i></button>
+     </div>
+  </form>
+</div>

@@ -33,7 +33,8 @@
             <div class="student-list p-3 bg-white rounded shadow-lg">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h5 class="mb-0">{{'home.topStudent'|translate}}</h5>
-                    <a href="#" class="text-decoration-none text-dark">{{'home.aLLstudent'|translate}}<span
+                    <a routerLink="/dashboard/instructor/student/Student"
+                        class="text-decoration-none text-dark">{{'home.aLLstudent'|translate}}<span
                             class="icon_success"><i
                                 [ngClass]="controlDirection() === 'rtl' ? 'fa-solid fa-arrow-left' : 'fa-solid fa-arrow-right'"></i>
                         </span></a>

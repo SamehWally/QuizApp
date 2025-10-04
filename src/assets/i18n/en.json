@@ -71,5 +71,49 @@
   "quiz": {
     "newQuiz": "Set up a new quiz",
     "questionBank": "Question Bank"
+    "NoStudentsInThisGroup": "No students in this group",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "group": {
+    "add-buttun": "Add Group",
+    "group": "Group",
+    "noOfStudents": "No. of students:",
+    "AddGroup": "Set up a new Group",
+    "updateGroup": "Update Group",
+    "deleteGroup": "Delete Group",
+    "groupName": "Groupe Name",
+    "studentList": "Student List",
+    "NoStudentsInThisGroup": "No students in this group",
+    "delete": "Delete",
+    "edit": "Edit"
+  },
+  "addEditStudent": {
+    "AddStudent": "Add Student",
+    "EditStudent": "Edit Student",
+    "SelectStudent": "Student Name",
+    "SelectGroup": "Student Group",
+    "placeholderStudent": "Select Student Name",
+    "placeholderGroup": "Select Group Name",
+    "PleaseSelectBothStudentAndGroup": "Please select both student and group."
+  },
+  "deleteStudentFromGroup": {
+    "DeleteStudent": "Delete Student",
+    "student": " Student:",
+    "group": " Group:",
+    "AreYouSure": "Are you sure you want to remove?"
+  },
+  "shange-password": {
+    "contnent": "Change password",
+    "password": "password",
+    "new-password": "new password",
+    "Change": "Change"
+  },
+  "reset": {
+    "contnent": "Reset password",
+    "new-password": "new password",
+    "email": "email",
+    "otp": "otp",
+    "Reset": "Reset"
   }
 }
