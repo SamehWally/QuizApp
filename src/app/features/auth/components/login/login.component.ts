@@ -14,8 +14,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  iconStyle:string='password-icon-ltr';
-  lang:string='en';
+  iconStyle: string = 'password-icon-ltr';
+  lang: string = 'en';
   PasswordPattern: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{1,10}$/;
   loginForm: FormGroup = new FormGroup({
@@ -33,15 +33,21 @@ export class LoginComponent {
   ) {}
   ngOnInit(): void {
     this.translate.onLangChange.subscribe((event: any) => {
-       if(event.lang=='ar'){
-      this.iconStyle='password-icon-rtl'
-      this.lang='ar';
-        }else{
-        this.iconStyle='password-icon-ltr'
-        this.lang='en';
-    }
+      if (event.lang == 'ar') {
+        this.iconStyle = 'password-icon-rtl';
+        this.lang = 'ar';
+      } else {
+        this.iconStyle = 'password-icon-ltr';
+        this.lang = 'en';
+      }
     });
-
+    if (localStorage.getItem('lang') == 'ar') {
+      this.lang = 'ar';
+      this.iconStyle = 'password-icon-rtl';
+    } else {
+      this.lang = 'en';
+      this.iconStyle = 'password-icon-ltr';
+    }
   }
   SubmitForm(data: FormGroup) {
     this._auth.login(data.value).subscribe({
