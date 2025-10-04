@@ -1,0 +1,260 @@
+<div class="container-fluid w-100">
+  <div class="row border-bottom text-center">
+    <div class="col-8 border-start py-3">
+      <h2>Set up a new quiz</h2>
+      <!-- <span>
+        {{
+        (FormID === 1
+          ? "addEditStudent.AddStudent"
+          : "addEditStudent.EditStudent"
+        ) | translate
+      }}
+      </span> -->
+    </div>
+    <div class="col-2 border-start py-3 IconSave">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <div (click)="close()" class="col-2 border-start py-3 IconClose">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+
+  <div class="px-4 py-5">
+    <h4>Details</h4>
+
+    <form [formGroup]="quizForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <p-inputgroup>
+          <p-button label="Title:" />
+          <input pInputText formControlName="title" placeholder="" />
+        </p-inputgroup>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-4">
+          <p-select
+            [options]="durationOptions"
+            formControlName="duration"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3"
+                    >Duration (in minutes)</label
+                  >
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-select>
+        </div>
+
+        <div class="col-4">
+          <p-select
+            [options]="numberQuestionsOptions"
+            formControlName="questions_number"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3"
+                    >No. of questions</label
+                  >
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-select>
+        </div>
+
+        <div class="col-4">
+          <p-dropdown
+            [options]="scorePerQuestionsOptions"
+            formControlName="score_per_question"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3"
+                    >Score per question</label
+                  >
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <p-inputgroup>
+          <p-button label="Description:" />
+          <input pInputText formControlName="description" placeholder="" />
+        </p-inputgroup>
+      </div>
+
+      <div class="mb-3">
+        <div class="schedule-bar">
+          <p-button label="Schedule" class="me-3" />
+
+          <div class="schedule-info">
+            <!-- اختيار التاريخ -->
+            <img src="./assets/images/Date-Icon.png" alt="" />
+            <p-calendar
+              formControlName="scheduledDate"
+              [showTime]="false"
+              dateFormat="dd/mm/yy"
+              [showIcon]="false"
+              placeholder="Select date"
+              [style]="{ width: '150px' }"
+            ></p-calendar>
+
+            <!-- اختيار الوقت -->
+            <img src="./assets/images/Time-Icon.png" alt="" />
+            <p-calendar
+              formControlName="scheduledDate"
+              [timeOnly]="true"
+              hourFormat="24"
+              [showIcon]="false"
+              placeholder="Select time"
+              [style]="{ width: '120px' }"
+            ></p-calendar>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-4">
+          <p-dropdown
+            [options]="difficultyOptions"
+            formControlName="difficulty"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3"
+                    >Difficulty level</label
+                  >
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="col-4">
+          <p-dropdown
+            [options]="categoryOptions"
+            formControlName="type"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3">Category type</label>
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+
+        <div class="col-4">
+          <p-dropdown
+            [options]="studentGroups"
+            formControlName="group"
+            optionLabel="label"
+            [showClear]="false"
+            [editable]="false"
+            [style]="{
+              width: '250px',
+              backgroundColor: 'white',
+              borderRadius: '10px'
+            }"
+          >
+            <ng-template pTemplate="selectedItem" let-selected>
+              <div class="selected-item bg-white">
+                <div class="label-style py-2">
+                  <label class="dropdown-label mx-2 me-3">Group name</label>
+                </div>
+                <div class="dropdown-value py-2 bg-white ms-3">
+                  {{ selected?.label }}
+                </div>
+              </div>
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <div class="dropdown-option">{{ option.label }}</div>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+
+      <p-button label="Submit" type="submit" class="mt-3" />
+    </form>
+  </div>
+</div>
+<div style="height: 350px"></div>

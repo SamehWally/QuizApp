@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HomeInstructorComponent } from './components/home-instructor/home-instructor.component';
-import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { ResultsComponent } from './components/results/results.component';
 import { SharedModule } from '../../../Shared/shared.module';
 
@@ -26,13 +24,16 @@ const routes: Routes = [
         (m) => m.StudentModule
       ),
   },
-
-  { path: 'quizzes', component: QuizzesComponent, title: 'Quizzes' },
+  {
+    path: 'quizzes',
+    loadChildren: () =>
+      import('./modules/quizzes/quizzes.module').then((m) => m.QuizzesModule),
+  },
   { path: 'results', component: ResultsComponent, title: 'Results' },
 ];
 
 @NgModule({
-  declarations: [HomeInstructorComponent, QuizzesComponent, ResultsComponent],
+  declarations: [HomeInstructorComponent, ResultsComponent],
   imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
   exports: [RouterModule, SharedModule],
 })

@@ -29,21 +29,28 @@
   "register": {
     "contnent": "Create your account and start using QuizWiz!",
     "signIn": "Sign in",
-    "sigUp": "Sign Up",
+    "signUp": "Sign Up",
     "first_name": "Your first name",
     "last_name": "Your last name",
     "role": "Your role",
     "email": "Your email address",
     "password": "Password",
-    "Forgot": "Forgot Password?",
-    "clickHere": "Click here",
+    "firstNameErrorRequired": "First name is required",
+    "lastNameErrorRequired": "Last name is required",
+    "roleRequired": "Role is required",
     "emailErrorRequired": "Email is required",
     "validEmailError": "Please enter a valid email",
     "passwordRequired": "Password is required",
     "passwordErrorPattern": "Password must contain uppercase, lowercase, number, symbol (max 10 chars)"
   },
   "forgot": {
-    "contnent": "Forgot password"
+    "contnent": "Forgot password",
+    "email": "Email address",
+    "send": "Send email",
+    "login": "Login?",
+    "clickHere": "Click here",
+    "emailErrorRequired": "Email is required",
+    "validEmailError": "Please enter a valid email"
   },
   "home": {
     "open": "Open",
@@ -60,5 +67,9 @@
     "AddStudent": "Add Student",
     "PleaseSelectGroupToViewStudents": "Please select a group to view students",
     "NoStudentsInThisGroup": "No students in this group"
+  },
+  "quiz": {
+    "newQuiz": "Set up a new quiz",
+    "questionBank": "Question Bank"
   }
 }

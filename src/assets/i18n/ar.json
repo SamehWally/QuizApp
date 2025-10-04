@@ -29,15 +29,28 @@
   "register": {
     "contnent": "قم بإنشاء حسابك وابدأ باستخدام QuizWiz!",
     "signIn": "تسجيل الدخول",
-    "sigUp": "إنشاء حساب",
+    "signUp": "إنشاء حساب",
+    "first_name": "إسمك الأول",
+    "last_name": "إسمك الأخير",
+    "role": "إختر صلاحيتك",
     "email": "البريد الإلكتروني المسجل",
     "password": "كلمة المرور",
-    "Forgot": "هل نسيت كلمة المرور؟",
-    "clickHere": "اضغط هنا",
+    "firstNameErrorRequired": "الإسم الأول مطلوب",
+    "lastNameErrorRequired": "الإسم الأخير مطلوب",
+    "roleRequired": "الصلاحية مطلوبة",
     "emailErrorRequired": "البريد الإلكتروني مطلوب",
     "validEmailError": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا",
     "passwordRequired": "كلمة المرور مطلوبة",
     "passwordErrorPattern": "كلمة المرور يجب أن تحتوي على حرف كبير، حرف صغير، رقم، ورمز (بحد أقصى 10 أحرف)"
+  },
+  "forgot": {
+    "contnent": "هل نسيت كلمة السر",
+    "email": "البريد الالكتروني",
+    "send": "إرسال الايميل",
+    "login": "تسجيل الدخول؟",
+    "clickHere": "إضغط هنا",
+    "emailErrorRequired": "الإيميل مطلوب",
+    "validEmailError": "من فضلك أدخل بريدًا إلكترونيًا صحيحًا"
   },
   "home": {
     "open": "فتح",

@@ -1,0 +1,137 @@
+:host ::ng-deep .p-autocomplete {
+  width: 100% !important;
+  margin: auto;
+}
+:host ::ng-deep .p-autocomplete-panel {
+  z-index: 9999 !important;
+}
+.IconSave:hover {
+  cursor: pointer;
+  color: green;
+  transition: all 0.5s;
+}
+.IconClose:hover {
+  cursor: pointer;
+  color: red;
+  transition: all 0.5s;
+}
+
+:host ::ng-deep .label-color .p-button-label {
+  color: #ffeddf !important;
+  font-weight: 500;
+}
+
+:host ::ng-deep .p-button {
+  background-color: #ffeddf !important;
+  border: none !important;
+}
+
+:host ::ng-deep .p-inputtext {
+  background-color: white !important;
+  color: black !important;
+  border: none !important;
+}
+
+:host ::ng-deep .p-inputgroup {
+  border: 1px solid #0000004d !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.dropdown-wrapper {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.dropdown-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.selected-item {
+  display: flex;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden !important;
+}
+
+.dropdown-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 2px;
+  background-color: #ffeddf;
+  height: 100%;
+  z-index: 9999 !important;
+}
+
+.label-style {
+  background-color: #ffeddf;
+  border-radius: 10px 10px 0 0;
+  clip-path: inset(0 round 10px 10px 10px 10px);
+  background-clip: padding-box;
+}
+
+.dropdown-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dropdown-option {
+  padding: 6px 12px;
+}
+
+:host ::ng-deep .p-select-label {
+  padding: 0 !important;
+}
+
+.schedule-bar {
+  display: flex;
+  align-items: center;
+  // gap: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  // padding: 4px 8px;
+  width: 470px;
+  // height: 40px;
+  border: 1px solid #0000004d;
+  background-clip: padding-box;
+  // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-btn {
+  // background-color: #007ad9;
+  color: white;
+  border: none;
+}
+
+.schedule-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: #333;
+}
+
+.calendar-icon,
+.clock-icon {
+  font-size: 16px;
+  color: #555;
+}
+
+.date-text,
+.time-text {
+  font-weight: 500;
+}
+
+:host ::ng-deep .p-calendar {
+  border-radius: 10px;
+  background-color: white;
+}
+
+.p-calendar {
+  border-radius: 8px;
+  background-color: white;
+}
