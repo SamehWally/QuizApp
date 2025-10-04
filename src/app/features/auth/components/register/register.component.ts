@@ -57,6 +57,13 @@ export class RegisterComponent {
       }
     });
     this.roles = [{ name: 'Instructor' }, { name: 'Student' }];
+    if (localStorage.getItem('lang') == 'ar') {
+      this.lang = 'ar';
+      this.iconStyle = 'password-icon-rtl';
+    } else {
+      this.lang = 'en';
+      this.iconStyle = 'password-icon-ltr';
+    }
   }
 
   SubmitForm(data: FormGroup) {
