@@ -9,8 +9,12 @@
           routerLink="/auth/login"
           routerLinkActive="active"
         >
-          <i class="pi pi-user" style="font-size: 2.5rem"></i>
-          <p>{{ "login.signIn" | translate }}</p>
+          <span
+            class="h-100 w-100 d-flex flex-column align-items-center justify-content-center"
+          >
+            <i class="mb-3 pi pi-user" style="font-size: 2.5rem"></i>
+            <p class="mb-0">{{ "register.signIn" | translate }}</p>
+          </span>
         </button>
       </div>
       <div class="col-6">
@@ -20,8 +24,12 @@
           routerLink="/auth/register"
           routerLinkActive="active"
         >
-          <i class="pi pi-user-plus" style="font-size: 2.5rem"></i>
-          <p>{{ "login.sigUp" | translate }}</p>
+          <span
+            class="h-100 w-100 d-flex flex-column align-items-center justify-content-center"
+          >
+            <i class="mb-3 pi pi-user-plus" style="font-size: 2.5rem"></i>
+            <p class="mb-0">{{ "register.signUp" | translate }}</p>
+          </span>
         </button>
       </div>
     </div>
@@ -33,7 +41,7 @@
         <div class="col-6">
           <!-- First name -->
           <div class="Group-auth-input">
-            <label for="first_name" class="my-1">{{
+            <label for="first_name" class="mb-1">{{
               "register.first_name" | translate
             }}</label>
             <p-iconfield>
@@ -51,7 +59,7 @@
               @if(registerForm.get('first_name')?.hasError('required') &&
               registerForm.get('first_name')?.touched){
               <span class="text-danger">{{
-                "login.emailErrorRequired" | translate
+                "register.firstNameErrorRequired" | translate
               }}</span>
               }
             </div>
@@ -60,7 +68,7 @@
         <div class="col-6">
           <!-- Last name -->
           <div class="Group-auth-input">
-            <label for="last_name" class="my-1">{{
+            <label for="last_name" class="mb-1">{{
               "register.last_name" | translate
             }}</label>
             <p-iconfield>
@@ -78,7 +86,7 @@
               @if(registerForm.get('last_name')?.hasError('required') &&
               registerForm.get('last_name')?.touched){
               <span class="text-danger">{{
-                "login.emailErrorRequired" | translate
+                "register.lastNameErrorRequired" | translate
               }}</span>
               }
             </div>
@@ -88,7 +96,7 @@
 
       <!-- email input -->
       <div class="Group-auth-input">
-        <label for="email" class="my-1">{{
+        <label for="email" class="mb-1">{{
           "register.email" | translate
         }}</label>
         <p-iconfield>
@@ -97,7 +105,7 @@
             pInputText
             id="email"
             formControlName="email"
-            placeholder="{{ 'login.email' | translate }}"
+            placeholder="{{ 'register.email' | translate }}"
             class="auth-input"
           />
         </p-iconfield>
@@ -106,12 +114,12 @@
           @if(registerForm.get('email')?.hasError('required') &&
           registerForm.get('email')?.touched){
           <span class="text-danger">{{
-            "login.emailErrorRequired" | translate
+            "register.emailErrorRequired" | translate
           }}</span>
           } @if(registerForm.get('email')?.hasError('email') &&
           registerForm.get('email')?.touched){
           <span class="text-danger">{{
-            "login.validEmailError" | translate
+            "register.validEmailError" | translate
           }}</span>
           }
         </div>
@@ -151,37 +159,29 @@
             formControlName="password"
             [showClear]="true"
             [toggleMask]="true"
-            placeholder="{{ 'login.password' | translate }}"
+            placeholder="{{ 'register.password' | translate }}"
           />
         </div>
         <div class="auth-errors">
           @if(registerForm.get('password')?.hasError('required') &&
           registerForm.get('password')?.touched){
           <span class="text-danger">{{
-            "login.passwordRequired" | translate
+            "register.passwordRequired" | translate
           }}</span>
           } @if(registerForm.get('password')?.hasError('pattern') &&
           registerForm.get('password')?.touched){
           <span class="text-danger">{{
-            "login.passwordErrorPattern" | translate
+            "register.passwordErrorPattern" | translate
           }}</span>
           }
         </div>
       </div>
       <!-- submit button -->
       <div class="row align-items-center">
-        <div class="col-6">
-          <div class="auth-submit">
-            <button type="submit">
-              {{ "login.signIn" | translate }} <i class="pi pi-check"></i>
-            </button>
-          </div>
-        </div>
-        <div class="col-6" [ngClass]="lang == 'en' ? 'text-end' : 'text-start'">
-          <a routerLink="/auth/forgot" class="forgot"
-            >{{ "login.Forgot" | translate }}
-            <span>{{ "login.clickHere" | translate }}</span></a
-          >
+        <div class="auth-submit">
+          <button type="submit">
+            {{ "register.signUp" | translate }} <i class="pi pi-check"></i>
+          </button>
         </div>
       </div>
     </form>

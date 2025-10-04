@@ -1,0 +1,86 @@
+<div class="container-fluid w-100">
+  <div class="px-4 py-5">
+    <div
+      class="col-4 p-3"
+      style="border: 1px solid #0000004d; border-radius: 10px"
+    >
+      <div class="col-10">
+        <h4>Data Structures Quiz One</h4>
+
+        <div class="mb-3">
+          <div class="schedule-bar">
+            <div class="schedule-info">
+              <!-- التاريخ -->
+              <img src="./assets/images/Date-Icon.png" alt="" />
+              <span class="date-display" style="margin-left: 8px">
+                <!-- {{ scheduledDate | date : "dd/MM/yyyy" }} -->
+                12 / 03 / 2023
+              </span>
+
+              <!-- الوقت -->
+              <img src="./assets/images/Time-Icon.png" alt="" />
+              <span class="time-display" style="margin-left: 8px">
+                <!-- {{ quizForm.get("scheduledDate")?.value | date : "HH:mm" }} -->
+                09 : 00
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <p-inputgroup>
+            <p-button label="Duration" />
+            <input pInputText disabled value="10 minutes" />
+          </p-inputgroup>
+        </div>
+
+        <div class="mb-3">
+          <p-inputgroup>
+            <p-button label="Number of questions" />
+            <input pInputText disabled value="15" />
+          </p-inputgroup>
+        </div>
+
+        <div class="mb-3">
+          <p-inputgroup>
+            <p-button label="Score per question" />
+            <input pInputText disabled value="1" />
+          </p-inputgroup>
+        </div>
+
+        <div class="mb-3">
+          <p-inputgroup>
+            <p-button label="Description" />
+            <input
+              pInputText
+              disabled
+              value="Lorem ipsum aset amet consectedur im nascsa assadqw assacsc aidwqdjv asdewfas qwdass Lorem ipsum aset amet consectedur im nascsa assadqw assacsc aidwqdjv"
+            />
+          </p-inputgroup>
+        </div>
+
+        <div class="mb-3">
+          <p-inputgroup>
+            <p-button label="Question bank used" />
+            <input pInputText disabled value="Bank one" />
+          </p-inputgroup>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <p-checkbox value="New York" inputId="ny" />
+        <label class="ms-2" for="ny">New York</label>
+      </div>
+
+      <div class="text-end">
+        <p-button
+          label="Edit"
+          [raised]="true"
+          severity="contrast"
+          icon="pi pi-check"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div style="height: 350px"></div>

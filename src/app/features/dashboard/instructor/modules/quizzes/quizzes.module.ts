@@ -1,0 +1,48 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { QuizzesRoutingModule } from './quizzes-routing.module';
+import { TranslatePipe } from '@ngx-translate/core';
+import { QuizDashboardComponent } from './components/quiz-dashboard/quiz-dashboard.component';
+import { AddQuizComponent } from './components/add-quiz/add-quiz.component';
+
+import { FormsModule } from '@angular/forms';
+import { InputGroup } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
+import { MenuItem } from 'primeng/api';
+import { DropdownModule } from 'primeng/dropdown';
+import { Select } from 'primeng/select';
+import { CalendarModule } from 'primeng/calendar';
+import { QuizDetailsComponent } from './components/quiz-details/quiz-details.component';
+import { TextareaModule } from 'primeng/textarea';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CheckboxModule } from 'primeng/checkbox';
+
+@NgModule({
+  declarations: [
+    QuizDashboardComponent,
+    AddQuizComponent,
+    QuizDetailsComponent,
+  ],
+  imports: [
+    CommonModule,
+    QuizzesRoutingModule,
+    TranslatePipe,
+    FormsModule,
+    InputGroup,
+    InputGroupAddonModule,
+    InputTextModule,
+    ButtonModule,
+    MenuModule,
+    DropdownModule,
+    Select,
+    CalendarModule,
+    TextareaModule,
+    ReactiveFormsModule,
+    CheckboxModule
+  ],
+})
+export class QuizzesModule {}
