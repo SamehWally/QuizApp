@@ -15,6 +15,23 @@ export class StudentViewComponent implements OnInit {
   selectedGroupId: string = '';
   currentPage: number = 0;
   rows: number = 10;
+  visible: boolean = false;
+  visibleDelete: boolean = false;
+  selectedStudent = {};
+  formID: number = 1;
+
+  showDialog(student: any, FormID: number) {
+    this.formID = FormID;
+    this.selectedStudent = student;
+    this.visible = true;
+  }
+  showDeleteDialog(student: any) {
+    this.selectedStudent = student;
+    this.visibleDelete = true;
+  }
+  closeDialog() {
+    this.visible = false;
+  }
 
   getAllStudents() {
     this._StudentService.getStudents().subscribe({
@@ -31,9 +48,6 @@ export class StudentViewComponent implements OnInit {
         if (this.groups.length > 0) {
           this.selectedGroupId = this.groups[0]._id;
         }
-
-        console.log('students', this.students);
-        console.log('groups', this.groups);
       },
     });
   }

@@ -65,4 +65,23 @@
   "groupName": "اسم المجموعة",
   "studentList": "قائمة الطلاب"
 }
+    "NoStudentsInThisGroup": "لا يوجد طلاب في هذه المجموعة",
+    "delete": "حذف",
+    "edit": "تعديل"
+  },
+  "addEditStudent": {
+    "AddStudent": "إضافة طالب",
+    "EditStudent": "تعديل طالب",
+    "SelectStudent": "اسم الطالب :",
+    "SelectGroup": "اسم المجموعة:",
+    "placeholderStudent": "اختر اسم الطالب",
+    "placeholderGroup": "اختر اسم المجموعة",
+    "PleaseSelectBothStudentAndGroup": "يرجى اختيار كل من الطالب والمجموعة."
+  },
+  "deleteStudentFromGroup": {
+    "DeleteStudent": "حذف طالب ",
+    "student": " الطــالب:",
+    "group": "المجموعة:",
+    "AreYouSure": "هل أنت متأكد أنك تريد الحذف؟"
+  }
 }
