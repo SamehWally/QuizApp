@@ -12,6 +12,7 @@ import { PaginatorModule } from 'primeng/paginator';
 import { MessageModule } from 'primeng/message';
 import { Dialog } from 'primeng/dialog';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { TableModule } from 'primeng/table';
 
 import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
@@ -37,6 +38,8 @@ import { ProgressBar } from 'primeng/progressbar';
     MessageModule,
     Dialog,
     AutoCompleteModule,
+
+    
     TableModule,
     Tag,
     ButtonModule,

@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeInstructorComponent } from './components/home-instructor/home-instructor.component';
 import { ResultsComponent } from './components/results/results.component';
 import { SharedModule } from '../../../Shared/shared.module';
+import { QuizzesResultsComponent } from './components/results/components/quizzes-results/quizzes-results.component';
+import { CompletedQuizzesComponent } from './components/results/components/completed-quizzes/completed-quizzes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'homeInstructor', pathMatch: 'full' },
@@ -29,7 +31,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/quizzes/quizzes.module').then((m) => m.QuizzesModule),
   },
-  { path: 'results', component: ResultsComponent, title: 'Results' },
+  { path: 'results', component: ResultsComponent, title: 'Results' ,
+  children: [
+    { path: '', redirectTo:"completed",pathMatch:"full"},
+     { path: 'completed', component: CompletedQuizzesComponent },
+    { path: 'result/:id', component: QuizzesResultsComponent }
+  ] },
+  
 ];
 
 @NgModule({
