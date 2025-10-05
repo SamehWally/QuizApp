@@ -11,6 +11,7 @@
   --color-auth-secondary: #ffeddf;
   --color-auth-third: #c5d86d;
 }
+
 /* ======================End Global====================== */
 /* ======================start auth====================== */
 .auth-button {
@@ -51,7 +52,6 @@
       transform: translate(-50%, -50%);
       color: white;
       z-index: 9999;
-
     }
     .p-password {
       width: 100%;
@@ -107,5 +107,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  text-transform: capitalize;
+}
+.no-dialog-header-space .p-dialog-header {
+  height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+.no-dialog-header-space .p-dialog-content {
+  padding-top: 0 !important;
 }

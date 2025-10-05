@@ -32,7 +32,6 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(withEventReplay()),
     provideToastr(),
-    provideClientHydration(),
     provideAnimations(),
     provideTranslateService({
       loader: provideTranslateHttpLoader({

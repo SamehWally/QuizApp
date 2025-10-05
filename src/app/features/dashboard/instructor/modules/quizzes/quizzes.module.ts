@@ -1,3 +1,4 @@
+import { QuestionBankComponent } from './components/question-bank/question-bank.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -20,15 +21,25 @@ import { QuizDetailsComponent } from './components/quiz-details/quiz-details.com
 import { TextareaModule } from 'primeng/textarea';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import { SharedModule } from '../../../../../Shared/shared.module';
+import { AddEditQuestionComponent } from './components/add-edit-question/add-edit-question.component';
+import {
+  DynamicDialogRef,
+  DialogService,
+  DynamicDialogModule,
+} from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
     QuizDashboardComponent,
     AddQuizComponent,
     QuizDetailsComponent,
+    QuestionBankComponent,
+    AddEditQuestionComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
     QuizzesRoutingModule,
     TranslatePipe,
     FormsModule,
@@ -42,7 +53,9 @@ import { CheckboxModule } from 'primeng/checkbox';
     CalendarModule,
     TextareaModule,
     ReactiveFormsModule,
-    CheckboxModule
+    CheckboxModule,
+    DynamicDialogModule,
   ],
+  providers: [DialogService],
 })
 export class QuizzesModule {}

@@ -124,5 +124,43 @@
     "Results": "النتائج",
     "Quizzes":"الاختبارات",
     "Data":"اختبار هياكل البيانات الأول"
+  "questionBank": {
+    "addButton": "إضافة سؤال",
+    "BankOfQuestions": "بنك الأسئلة",
+    "Clear": "مسح",
+    "SearchQuestion": "ابحث عن سؤال...",
+    "Title": "العنوان",
+    "Category": "التصنيف",
+    "Answer": "الإجابة",
+    "Difficulty": "الصعوبة",
+    "Type": "النوع",
+    "Status": "الحالة",
+    "Actions": "الإجراءات",
+    "Search": "بحث",
+    "NoQuestionsAvailable": "لا توجد أسئلة متاحة",
+    "Showing": "عرض {{first}} إلى {{last}} من إجمالي {{totalRecords}} سجل"
+  },
+  "addEditQuestion": {
+    "AddQuestion": "إضافة سؤال",
+    "EditQuestion": "تعديل سؤال",
+    "Title": "العنوان",
+    "Description": "الوصف",
+    "Difficulty": "مستوى الصعوبة",
+    "Type": "النوع",
+    "Option": "خيار",
+    "Answer": "الإجابة",
+    "PlaceholderTitle": "أدخل عنوان السؤال",
+    "PlaceholderDescription": "أدخل وصف السؤال",
+    "PlaceholderOption": "أدخل الخيار",
+    "PlaceholderAnswer": "أدخل الإجابة الصحيحة (A، B، C، D)",
+    "PlaceholderDifficulty": "اختر مستوى الصعوبة",
+    "PlaceholderType": "اختر نوع السؤال"
+  },
+  "validation": {
+    "TitleRequired": "يجب إدخال العنوان",
+    "OptionRequired": "يجب إدخال الخيار",
+    "AnswerRequired": "يجب إدخال الإجابة",
+    "DifficultyRequired": "يجب اختيار مستوى الصعوبة",
+    "TypeRequired": "يجب اختيار النوع"
   }
 }
