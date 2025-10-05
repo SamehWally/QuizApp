@@ -1,3 +1,4 @@
+import { QuestionBankComponent } from './components/question-bank/question-bank.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -20,15 +21,18 @@ import { QuizDetailsComponent } from './components/quiz-details/quiz-details.com
 import { TextareaModule } from 'primeng/textarea';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import { SharedModule } from '../../../../../Shared/shared.module';
 
 @NgModule({
   declarations: [
     QuizDashboardComponent,
     AddQuizComponent,
     QuizDetailsComponent,
+    QuestionBankComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
     QuizzesRoutingModule,
     TranslatePipe,
     FormsModule,
@@ -42,7 +46,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     CalendarModule,
     TextareaModule,
     ReactiveFormsModule,
-    CheckboxModule
+    CheckboxModule,
   ],
 })
 export class QuizzesModule {}
