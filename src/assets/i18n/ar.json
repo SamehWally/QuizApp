@@ -116,14 +116,15 @@
     "Type": "النوع",
     "Points": "النقاط",
     "Answer": "الإجابة",
-    "buttun": "منظر",
+    "buttun": "عرض ",
     "Student": "الطالب",
     "Score": "الدرجة",
     "Average": "المتوسط",
     "Time_submitted": "وقت الإرسال",
     "Results": "النتائج",
-    "Quizzes":"الاختبارات",
-    "Data":"اختبار هياكل البيانات الأول"
+    "Quizzes": "الاختبارات",
+    "Data": "اختبار هياكل البيانات الأول"
+  },
   "questionBank": {
     "addButton": "إضافة سؤال",
     "BankOfQuestions": "بنك الأسئلة",
