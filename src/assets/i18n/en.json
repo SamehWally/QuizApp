@@ -117,5 +117,23 @@
     "email": "email",
     "otp": "otp",
     "Reset": "Reset"
+  },
+    "results":{
+      "contnent": "Completed Quizzes",
+     "Title":"Title",
+        "Group-name":"Group name",
+         "Difficulty":"Difficulty",
+          "Type":"Type",
+           "Points":"Points",
+           "Answer":"Answer",
+           "buttun":"view",
+            "Student": "Student",
+    "Score": "Score",
+    "Average": "Average",
+    "Time_submitted":"Time submitted",
+    "Results": "Results",
+      "Quizzes":"Quizzes",
+    "Data":"Data structures quiz one"
+       
   }
 }

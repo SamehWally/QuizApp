@@ -2,13 +2,29 @@ th{
   background: #0D1321 !important;
   color: #fff !important;
 }
+
 h1{font-family: Inter;
 font-weight: 500;
 font-style: Medium;
-font-size: 16px;
-
+font-size: 20px;
+color: #000000;
+margin-left: 20px
+;
 line-height: 100%;
 letter-spacing: 0%;
+a{
+  text-decoration: none;
+  color: #000000;
+
+}
+a:hover{
+  color: #0b2c50;
+}
+i{
+  color: #C5D86D;
+  margin-right: 5px;
+
+}
 }
 h3{
     font-family: Nunito;
