@@ -1,18 +1,18 @@
  <div class="quiz-table-container">
     <div class="quiz-title">
-      <h1>Completed Quizzes</h1>
+      <h1>{{"results.contnent"| translate }}</h1>
     </div>
 
     <table class="table">
       <thead>
         <tr>
-        <th>Title</th>
-        <th>Group name</th>
-        <th>Difficulty</th>
-        <th>Type</th>
-        <th>Points</th>
+        <th>{{"results.Title"| translate }}</th>
+        <th>{{"results.Group-name"| translate }}</th>
+        <th>{{"results.Difficulty"| translate }}</th>
+        <th>{{"results.Type"| translate }}</th>
+        <th>{{"results.Points"| translate }}</th>
         
-        <th>Answer</th>
+        <th>{{"results.Answer"| translate }}</th>
         <th></th>
         </tr>
       </thead>
@@ -28,7 +28,7 @@
      
 
         <td><strong>{{ item.answer }}</strong></td>
-        <td> <button class="btn btn-view " routerLink="../result/{{item._id}}">View</button></td>
+        <td> <button class="btn btn-view " routerLink="../result/{{item._id}}">{{"results.buttun"| translate }}</button></td>
       </tr>
       </tbody>
     </table>
