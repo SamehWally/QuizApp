@@ -22,6 +22,12 @@ import { TextareaModule } from 'primeng/textarea';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { SharedModule } from '../../../../../Shared/shared.module';
+import { AddEditQuestionComponent } from './components/add-edit-question/add-edit-question.component';
+import {
+  DynamicDialogRef,
+  DialogService,
+  DynamicDialogModule,
+} from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,7 @@ import { SharedModule } from '../../../../../Shared/shared.module';
     AddQuizComponent,
     QuizDetailsComponent,
     QuestionBankComponent,
+    AddEditQuestionComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +54,8 @@ import { SharedModule } from '../../../../../Shared/shared.module';
     TextareaModule,
     ReactiveFormsModule,
     CheckboxModule,
+    DynamicDialogModule,
   ],
+  providers: [DialogService],
 })
 export class QuizzesModule {}

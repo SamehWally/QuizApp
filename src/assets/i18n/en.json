@@ -120,6 +120,41 @@
   },
   "questionBank": {
     "addButton": "Add Question",
-    "BankOfQuestions": "Bank Of Questions"
+    "BankOfQuestions": "Question Bank",
+    "Clear": "Clear",
+    "SearchQuestion": "Search for a question...",
+    "Title": "Title",
+    "Category": "Category",
+    "Answer": "Answer",
+    "Difficulty": "Difficulty",
+    "Type": "Type",
+    "Status": "Status",
+    "Actions": "Actions",
+    "Search": "Search",
+    "NoQuestionsAvailable": "No questions available",
+    "Showing": "Showing {{first}} to {{last}} of {{totalRecords}} entries"
+  },
+  "addEditQuestion": {
+    "AddQuestion": "Add Question",
+    "EditQuestion": "Edit Question",
+    "Title": "Title",
+    "Description": "Description",
+    "Difficulty": "Difficulty",
+    "Type": "Type",
+    "Option": "Option",
+    "Answer": "Answer",
+    "PlaceholderTitle": "Enter question title",
+    "PlaceholderDescription": "Enter question description",
+    "PlaceholderOption": "Enter option",
+    "PlaceholderAnswer": "Enter correct answer (A, B, C, D)",
+    "PlaceholderDifficulty": "Select difficulty",
+    "PlaceholderType": "Select question type"
+  },
+  "validation": {
+    "TitleRequired": "Title is required",
+    "OptionRequired": "Option is required",
+    "AnswerRequired": "Answer is required",
+    "DifficultyRequired": "Difficulty is required",
+    "TypeRequired": "Type is required"
   }
 }

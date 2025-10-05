@@ -9,9 +9,9 @@
         </div>
 
         <div class="py-3 h-100">
-            <p-table #dt [value]="questions" [rows]="15" [paginator]="true" [resizableColumns]="true"
-                [columnResizeMode]="'fit'" [loading]="loading" [rowsPerPageOptions]="[15, 30, 50]"
-                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            <p-table #dt [value]="questions" [rows]="10" [paginator]="true" [resizableColumns]="true"
+                [columnResizeMode]="'fit'" [loading]="loading" [rowsPerPageOptions]="[10, 30, 50]"
+                [currentPageReportTemplate]="'questionBank.Showing' | translate:{first:'{first}', last:'{last}', totalRecords:'{totalRecords}'}"
                 [showCurrentPageReport]="true"
                 [globalFilterFields]="['title','description','difficulty','answer','status','type']">
 
@@ -19,7 +19,7 @@
                 <!-- 🔍 Global Search -->
                 <ng-template pTemplate="caption">
                     <div class="d-flex justify-content-start align-items-start flex-wrap gap-2 w-100 ">
-                        <p-button [outlined]="true" icon="pi pi-filter-slash" label="Clear"
+                        <p-button [outlined]="true" icon="pi pi-filter-slash" [label]="'questionBank.Clear' | translate"
                             (click)="clear(dt)"></p-button>
 
                         <div class="w-75">
@@ -28,7 +28,8 @@
                                     <i class="pi pi-search"></i>
                                 </p-inputIcon>
                                 <input class="w-50" pInputText type="text" [(ngModel)]="searchValue"
-                                    (input)="onGlobalFilter($event, dt)" placeholder="Search question..." />
+                                    (input)="onGlobalFilter($event, dt)"
+                                    [placeholder]="'questionBank.SearchQuestion'|translate" />
                             </p-iconField>
                         </div>
                     </div>
@@ -38,31 +39,31 @@
                 <ng-template pTemplate="header">
                     <tr>
                         <th pResizableColumn pSortableColumn="title">
-                            Title <p-sortIcon field="title" />
+                            {{'questionBank.Title'|translate}} <p-sortIcon field="title" />
                             <p-columnFilter field="title" matchMode="contains" display="menu" />
                         </th>
                         <th pResizableColumn pSortableColumn="description">
-                            Category <p-sortIcon field="description" />
+                            {{'questionBank.Category'|translate}} <p-sortIcon field="description" />
                             <p-columnFilter field="description" matchMode="contains" display="menu" />
                         </th>
                         <th pResizableColumn pSortableColumn="difficulty">
-                            Difficulty <p-sortIcon field="difficulty" />
+                            {{'questionBank.Difficulty'|translate}} <p-sortIcon field="difficulty" />
                             <p-columnFilter field="difficulty" matchMode="equals" display="menu" />
                         </th>
                         <th pResizableColumn pSortableColumn="answer">
-                            Answer <p-sortIcon field="answer" />
+                            {{'questionBank.Answer'|translate}} <p-sortIcon field="answer" />
                             <p-columnFilter field="answer" matchMode="equals" display="menu" />
                         </th>
                         <th pResizableColumn pSortableColumn="type">
-                            type <p-sortIcon field="type" />
+                            {{'questionBank.Type'|translate}} <p-sortIcon field="type" />
                             <p-columnFilter field="type" matchMode="equals" display="menu" />
                         </th>
                         <th pResizableColumn pSortableColumn="status">
-                            Status <p-sortIcon field="status" />
+                            {{'questionBank.Status'|translate}} <p-sortIcon field="status" />
                             <p-columnFilter field="status" matchMode="equals" display="menu" />
                         </th>
                         <th class="text-center" pResizableColumn>
-                            Actions
+                            {{'questionBank.Actions'|translate}}
                         </th>
                     </tr>
                 </ng-template>
@@ -85,7 +86,7 @@
                         </td>
                         <td>
                             <div class="d-flex align-items-center justify-content-center gap-4">
-                                <i class="pi  pi-eye"></i>
+                                <i (click)="openDialog(question._id)" class="pi  pi-eye"></i>
                                 <i class="pi  pi-pen-to-square"></i>
                                 <i class="pi  pi-trash"></i>
 
@@ -96,7 +97,7 @@
                 </ng-template>
                 <ng-template pTemplate="emptymessage">
                     <tr>
-                        <td colspan="6" class="text-center">No questions found.</td>
+                        <td colspan="6" class="text-center">{{'questionBank.NoQuestionsAvailable'|translate}}</td>
                     </tr>
                 </ng-template>
             </p-table>
