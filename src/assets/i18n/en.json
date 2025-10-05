@@ -117,5 +117,9 @@
     "email": "email",
     "otp": "otp",
     "Reset": "Reset"
+  },
+  "questionBank": {
+    "addButton": "Add Question",
+    "BankOfQuestions": "Bank Of Questions"
   }
 }
