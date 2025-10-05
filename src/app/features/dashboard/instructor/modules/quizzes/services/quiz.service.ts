@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IBankQuestion } from '../interfaces/IBankQuestion';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +17,8 @@ export class QuizService {
 
   addQuiz(data: any): Observable<any> {
     return this._HttpClient.post('quiz', data);
+  }
+  getAllQuestion(): Observable<IBankQuestion[]> {
+    return this._HttpClient.get<IBankQuestion[]>('question');
   }
 }
