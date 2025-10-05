@@ -1,0 +1,36 @@
+ <div class="quiz-table-container">
+    <div class="quiz-title">
+      <h1>Completed Quizzes</h1>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+        <th>Title</th>
+        <th>Group name</th>
+        <th>Difficulty</th>
+        <th>Type</th>
+        <th>Points</th>
+        
+        <th>Answer</th>
+        <th></th>
+        </tr>
+      </thead>
+      <tbody>
+         
+        <tr *ngFor="let item of resuit">
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.difficulty }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.points }}</td>
+
+     
+
+        <td><strong>{{ item.answer }}</strong></td>
+        <td> <button class="btn btn-view " routerLink="../result/{{item._id}}">View</button></td>
+      </tr>
+      </tbody>
+    </table>
+  
+  </div>
