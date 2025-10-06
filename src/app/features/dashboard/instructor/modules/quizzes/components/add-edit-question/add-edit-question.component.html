@@ -2,9 +2,9 @@
 
     <div class="row border-bottom text-center">
         <div class="col-8 border-start py-3">
-            <span>{{ (Id != "" ? 'addEditQuestion.AddQuestion' : 'addEditQuestion.EditQuestion') | translate }}</span>
+            <span>{{ actionKey | translate }}</span>
         </div>
-        <div (click)="onSubmit()" class="col-2 border-start py-3 IconSave">
+        <div (click)="addEditQuestion()" class="col-2 border-start py-3 IconSave">
             <i class="fa-solid fa-check"></i>
         </div>
         <div (click)="closeDialogWithSuccess()" class="col-2 border-start py-3 IconClose">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="p-3">
-        <form [formGroup]="formsGroup" (ngSubmit)="onSubmit()">
+        <form [formGroup]="formsGroup" (ngSubmit)="addEditQuestion()">
             <div class="row g-3">
 
                 <!-- Title -->
@@ -41,7 +41,7 @@
                 </div>
 
                 <!-- Options -->
-                <div formGroupName="options" class="row gx-1 gy-2 mt-2">
+                <div formGroupName="options" class="row gx-1 gy-2 mt-2 ps-2">
                     <div class="col-md-6" *ngFor="let opt of ['A','B','C','D']">
                         <p-inputGroup>
                             <p-inputGroupAddon>{{ 'addEditQuestion.Option' | translate }} {{ opt }}</p-inputGroupAddon>

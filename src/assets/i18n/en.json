@@ -165,7 +165,8 @@
     "PlaceholderOption": "Enter option",
     "PlaceholderAnswer": "Enter correct answer (A, B, C, D)",
     "PlaceholderDifficulty": "Select difficulty",
-    "PlaceholderType": "Select question type"
+    "PlaceholderType": "Select question type",
+    "ViewQuestion": "View Question"
   },
   "validation": {
     "TitleRequired": "Title is required",

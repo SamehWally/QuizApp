@@ -1,3 +1,16 @@
 p-inputgroupaddon {
   background-color: #ffeddf !important;
 }
+.IconSave:hover {
+  cursor: pointer;
+  color: green;
+  transition: all 1s;
+  transform: translate(0, -3px);
+}
+.IconClose:hover {
+  cursor: pointer;
+  color: red;
+  transition: all 1s;
+
+  transform: translate(0, -3px);
+}

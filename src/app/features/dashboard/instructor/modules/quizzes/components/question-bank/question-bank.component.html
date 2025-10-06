@@ -2,17 +2,18 @@
     <div class="groupe-section px-3">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <h2>{{ 'questionBank.BankOfQuestions' | translate }}</h2>
-            <button class="add-group-btn">
+            <button (click)="openDialog('')" class="add-group-btn">
                 <i class="pi pi-plus-circle"></i>
                 {{ 'questionBank.addButton' | translate }}
             </button>
         </div>
 
-        <div class="py-3 h-100">
+        <div class=" h-100">
             <p-table #dt [value]="questions" [rows]="10" [paginator]="true" [resizableColumns]="true"
-                [columnResizeMode]="'fit'" [loading]="loading" [rowsPerPageOptions]="[10, 30, 50]"
+                class="p-datatable-gridlines" [columnResizeMode]="'fit'" [loading]="loading"
+                [rowsPerPageOptions]="[10, 30, 50]"
                 [currentPageReportTemplate]="'questionBank.Showing' | translate:{first:'{first}', last:'{last}', totalRecords:'{totalRecords}'}"
-                [showCurrentPageReport]="true"
+                [showCurrentPageReport]="true" paginatorDropdownAppendTo="body"
                 [globalFilterFields]="['title','description','difficulty','answer','status','type']">
 
 
@@ -69,14 +70,14 @@
                 </ng-template>
 
                 <!-- 📋 Table Body -->
-                <ng-template pTemplate="body" let-question>
+                <ng-template class="pb-5" pTemplate="body" let-question>
                     <tr>
                         <td>{{ question.title }}</td>
-                        <td>{{ question.description }}</td>
-                        <td>{{ question.difficulty }}</td>
-                        <td>{{ question.answer }}</td>
-                        <td>{{ question.type }}</td>
-                        <td>
+                        <td class="text-center">{{ question.description }}</td>
+                        <td class="text-center">{{ question.difficulty }}</td>
+                        <td class="text-center">{{ question.answer }}</td>
+                        <td class="text-center">{{ question.type }}</td>
+                        <td class="text-center">
                             <span class="badge" [ngClass]="{
               'bg-success': question.status === 'active',
               'bg-secondary': question.status !== 'active'
@@ -86,9 +87,9 @@
                         </td>
                         <td>
                             <div class="d-flex align-items-center justify-content-center gap-4">
-                                <i (click)="openDialog(question._id)" class="pi  pi-eye"></i>
-                                <i class="pi  pi-pen-to-square"></i>
-                                <i class="pi  pi-trash"></i>
+                                <i (click)="openDialog(question._id,true)" class="pi  pi-eye"></i>
+                                <i (click)="openDialog(question._id)" class="pi  pi-pen-to-square"></i>
+                                <i (click)="openDialog(question._id)" class="pi  pi-trash"></i>
 
                             </div>
                         </td>

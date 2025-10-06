@@ -155,7 +155,8 @@
     "PlaceholderOption": "أدخل الخيار",
     "PlaceholderAnswer": "أدخل الإجابة الصحيحة (A، B، C، D)",
     "PlaceholderDifficulty": "اختر مستوى الصعوبة",
-    "PlaceholderType": "اختر نوع السؤال"
+    "PlaceholderType": "اختر نوع السؤال",
+    "ViewQuestion": "عرض سؤال"
   },
   "validation": {
     "TitleRequired": "يجب إدخال العنوان",
