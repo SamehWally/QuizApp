@@ -44,7 +44,7 @@ export class QuestionBankComponent implements OnInit {
     this.searchValue = '';
   }
 
-  openDialog(QuestionId: string) {
+  openDialog(QuestionId: string, ViewQuestion: boolean = false) {
     this.ref = this.dialogService.open(AddEditQuestionComponent, {
       width: '40rem',
       height: 'auto',
@@ -57,6 +57,7 @@ export class QuestionBankComponent implements OnInit {
       styleClass: 'no-dialog-header-space',
       data: {
         id: QuestionId,
+        View: ViewQuestion,
       },
     });
 
