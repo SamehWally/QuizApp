@@ -31,4 +31,7 @@ export class QuizService {
   editQuestion(data: any, id: string): Observable<INewQuestion> {
     return this._HttpClient.put<INewQuestion>(`question/${id}`, data);
   }
+  deleteQuestion(id: string): Observable<any> {
+    return this._HttpClient.delete(`question/${id}`);
+  }
 }

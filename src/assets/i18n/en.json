@@ -24,7 +24,9 @@
     "changePassword": "Change Password",
     "logout": "Logout",
     "newQuiz": "New Quiz",
-    "Dashboard": "Dashboard"
+    "Dashboard": "Dashboard",
+    "Arabic": "Arabic",
+    "English": "English"
   },
   "register": {
     "contnent": "Create your account and start using QuizWiz!",
@@ -174,5 +176,9 @@
     "AnswerRequired": "Answer is required",
     "DifficultyRequired": "Difficulty is required",
     "TypeRequired": "Type is required"
+  },
+  "deleteQuestion": {
+    "title": "Delete Question",
+    "actionKey": "Are you sure you want to delete this question?"
   }
 }

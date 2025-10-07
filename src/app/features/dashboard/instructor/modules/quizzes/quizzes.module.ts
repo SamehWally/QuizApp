@@ -23,11 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
 import { SharedModule } from '../../../../../Shared/shared.module';
 import { AddEditQuestionComponent } from './components/add-edit-question/add-edit-question.component';
-import {
-  DynamicDialogRef,
-  DialogService,
-  DynamicDialogModule,
-} from 'primeng/dynamicdialog';
+import { DeleteQuestionComponent } from './components/delete-question/delete-question.component';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -36,6 +33,7 @@ import {
     QuizDetailsComponent,
     QuestionBankComponent,
     AddEditQuestionComponent,
+    DeleteQuestionComponent,
   ],
   imports: [
     CommonModule,
