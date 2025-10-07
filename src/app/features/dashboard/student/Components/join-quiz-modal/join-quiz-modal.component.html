@@ -1,0 +1,23 @@
+<div class="header ">
+    <div class="title">
+        <h3>{{'studentModule.joinQuiz'|translate}}</h3>
+    </div>
+    <div class="actions">
+        <button class="save" (click)="submitForm()">
+            <i class="pi pi-check"></i>
+        </button>
+        <button (click)="closeModal()">
+            <i class="pi pi-times"></i>
+        </button>
+    </div>
+</div>
+<div class="content mt-5 lang-ar">
+    <form [formGroup]="JoinQuizForm">
+        <div class="group-input">
+            <input type="text" pInputText formControlName="code" class="w-100 input-custom"  />
+            <div class="input-layer">{{'studentModule.code'|translate}}</div>
+        </div>
+
+    </form>
+
+</div>

@@ -48,5 +48,17 @@ export class SidebarComponent {
       menuLink: '/dashboard/instructor/results',
       isActive: this.isInstructor(),
     },
+    {
+      title: 'dashboard.Quizzes',
+      icon: 'fa-clock',
+      menuLink: '/dashboard/student/quizzes',
+      isActive: this.isStudent(),
+    },
+     {
+      title: 'dashboard.Results',
+      icon: ' fa-square-poll-vertical',
+      menuLink: '/dashboard/student/results',
+      isActive: this.isStudent(),
+    },
   ];
 }
