@@ -6,6 +6,7 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { DynamicDialogRef } from 'primeng/dynamicdialog'; // ⬅️ هذا هو الكلاس الذي يحتوي على close()
 import { QuizService } from '../../services/quiz.service';
 import { INewQuestion } from '../../interfaces/INewQuestion';
+import { ToastService } from '../../../../../../../core/services/toast.service';
 
 @Component({
   selector: 'app-add-edit-question',
@@ -14,11 +15,20 @@ import { INewQuestion } from '../../interfaces/INewQuestion';
   styleUrl: './add-edit-question.component.scss',
 })
 export class AddEditQuestionComponent implements OnInit {
+  //#region Injecting Services
   private readonly dialogRef = inject(DynamicDialogRef);
   private readonly dialogConfig = inject(DynamicDialogConfig);
   private readonly _QuizService = inject(QuizService);
+  private readonly _toast = inject(ToastService);
+
+  //#endregion Injecting Services
+
+  //#region Variables
   Id: string = this.dialogConfig.data.id;
   View: boolean = this.dialogConfig.data.View;
+  //#endregion Variables
+
+  //#region Forms
   formsGroup = new FormGroup({
     title: new FormControl(null, [Validators.required]),
     description: new FormControl(null),
@@ -32,7 +42,9 @@ export class AddEditQuestionComponent implements OnInit {
     difficulty: new FormControl(null, [Validators.required]),
     type: new FormControl(null, [Validators.required]),
   });
+  //#endregion Forms
 
+  //#region Lists
   difficultyList = [
     { label: 'Easy', value: 'easy' },
     { label: 'Medium', value: 'medium' },
@@ -45,6 +57,9 @@ export class AddEditQuestionComponent implements OnInit {
     { label: 'DO', value: 'DO' },
   ];
 
+  //#endregion Lists
+
+  //#region Methods
   getQuestionById() {
     if (this.Id) {
       this._QuizService.getQuestionById(this.Id).subscribe({
@@ -80,14 +95,14 @@ export class AddEditQuestionComponent implements OnInit {
           .editQuestion(this.formsGroup.value, this.Id)
           .subscribe({
             next: (res) => {
-              console.log('Question added successfully:', res);
+              this._toast.showSuccess('Question added successfully');
             },
           });
       } else {
         console.log('Form Value:', this.formsGroup.value);
         this._QuizService.addQuestion(this.formsGroup.value).subscribe({
           next: (res) => {
-            console.log('Question added successfully:', res);
+            this._toast.showSuccess('Question Edit successfully');
           },
         });
       }
@@ -106,8 +121,12 @@ export class AddEditQuestionComponent implements OnInit {
       ? 'addEditQuestion.ViewQuestion'
       : 'addEditQuestion.EditQuestion';
   }
+  //#endregion Methods
+
+  //#region Lifecycle Hooks
 
   ngOnInit(): void {
     this.getQuestionById();
   }
+  //#endregion Lifecycle Hooks
 }

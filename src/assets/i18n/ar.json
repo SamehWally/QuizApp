@@ -24,7 +24,9 @@
     "changePassword": "تغيير كلمة المرور",
     "logout": "تسجيل الخروج",
     "newQuiz": "اختبار جديد",
-    "Dashboard": "لوحة التحكم"
+    "Dashboard": "لوحة التحكم",
+    "Arabic": "العربية",
+    "English": "الإنجليزية"
   },
   "register": {
     "contnent": "قم بإنشاء حسابك وابدأ باستخدام QuizWiz!",
@@ -164,5 +166,9 @@
     "AnswerRequired": "يجب إدخال الإجابة",
     "DifficultyRequired": "يجب اختيار مستوى الصعوبة",
     "TypeRequired": "يجب اختيار النوع"
+  },
+  "deleteQuestion": {
+    "title": "حذف السؤال",
+    "actionKey": "هل أنت متأكد أنك تريد حذف هذا السؤال؟"
   }
 }
