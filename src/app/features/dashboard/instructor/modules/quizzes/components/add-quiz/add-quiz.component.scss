@@ -7,13 +7,9 @@
 }
 .IconSave:hover {
   cursor: pointer;
-  color: green;
-  transition: all 0.5s;
 }
 .IconClose:hover {
   cursor: pointer;
-  color: red;
-  transition: all 0.5s;
 }
 
 :host ::ng-deep .label-color .p-button-label {
@@ -135,3 +131,12 @@
   border-radius: 8px;
   background-color: white;
 }
+
+::ng-deep .p-dialog {
+  background: white;
+}
+
+::ng-deep .p-dialog-header {
+  display: none !important;
+}
+

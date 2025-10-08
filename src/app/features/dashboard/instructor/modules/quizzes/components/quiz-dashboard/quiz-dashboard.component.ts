@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { AddQuizComponent } from '../add-quiz/add-quiz.component';
+import { HttpClient } from '@angular/common/http';
+import { QuizService } from '../../services/quiz.service';
 
 @Component({
   selector: 'app-quiz-dashboard',
@@ -7,29 +11,48 @@ import { Component } from '@angular/core';
   styleUrl: './quiz-dashboard.component.scss',
 })
 export class QuizDashboardComponent {
+  ref: DynamicDialogRef | undefined;
+  products!: any[];
 
-  // private readonly _StudentService = inject(StudentService);
-  // students: IStudent[] = [];
-  // groups: IGroup[] = [];
-  selectedGroupId: string = '';
-  currentPage: number = 0;
-  rows: number = 10;
-  visible: boolean = false;
-  visibleDelete: boolean = false;
-  selectedStudent = {};
-  formID: number = 1;
+  incomming: any[] = [];
+  completed: any[] = [];
 
-  showDialog(student: any, FormID: number) {
-    this.formID = FormID;
-    this.selectedStudent = student;
-    this.visible = true;
+  constructor(
+    private dialogService: DialogService,
+    private _quizService: QuizService
+  ) {
+    this.firstFiveIncomming();
+    this.lastFiveCompleted();
   }
 
-  showDeleteDialog(student: any) {
-    this.selectedStudent = student;
-    this.visibleDelete = true;
+  showDialog() {
+    this.ref = this.dialogService.open(AddQuizComponent, {
+      width: '50%',
+      modal: true,
+      contentStyle: { overflow: 'auto' },
+      baseZIndex: 10000,
+    });
   }
-  closeDialog() {
-    this.visible = false;
+
+  //#region firstFiveIncomming
+  firstFiveIncomming() {
+    this._quizService.firstFiveIncomming().subscribe({
+      next: (res) => {
+        this.incomming = res;
+        console.log(this.incomming);
+      },
+    });
   }
+  //#endregion
+
+  //#region lastFiveCompleted
+  lastFiveCompleted() {
+    this._quizService.lastFiveCompleted().subscribe({
+      next: (res) => {
+        this.completed = res;
+        console.log(this.completed);
+      },
+    });
+  }
+  //#endregion
 }

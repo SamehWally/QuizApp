@@ -16,6 +16,18 @@ export class QuizService {
     return this._HttpClient.get<any[]>('group');
   }
 
+  getById(id: string): Observable<any> {
+    return this._HttpClient.get(`quiz/${id}`);
+  }
+
+  firstFiveIncomming(): Observable<any[]> {
+    return this._HttpClient.get<any[]>('quiz/incomming');
+  }
+
+  lastFiveCompleted(): Observable<any[]> {
+    return this._HttpClient.get<any[]>('quiz/completed');
+  }
+
   addQuiz(data: any): Observable<any> {
     return this._HttpClient.post('quiz', data);
   }

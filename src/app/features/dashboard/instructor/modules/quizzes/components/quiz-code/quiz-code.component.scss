@@ -1,0 +1,14 @@
+::ng-deep .p-dialog {
+  background: white;
+}
+
+::ng-deep .p-dialog-header {
+  display: none !important;
+}
+
+.close-btn {
+  border-radius: 20px;
+  background-color: #c5d86d;
+  padding-inline: 10px;
+  padding-block: 5px;
+}

@@ -13,7 +13,6 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
-import { MenuItem } from 'primeng/api';
 import { DropdownModule } from 'primeng/dropdown';
 import { Select } from 'primeng/select';
 import { CalendarModule } from 'primeng/calendar';
@@ -24,7 +23,10 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { SharedModule } from '../../../../../Shared/shared.module';
 import { AddEditQuestionComponent } from './components/add-edit-question/add-edit-question.component';
 import { DeleteQuestionComponent } from './components/delete-question/delete-question.component';
+import { Dialog } from 'primeng/dialog';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import { QuizCodeComponent } from './components/quiz-code/quiz-code.component';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
     QuestionBankComponent,
     AddEditQuestionComponent,
     DeleteQuestionComponent,
+    QuizCodeComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +56,8 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
     ReactiveFormsModule,
     CheckboxModule,
     DynamicDialogModule,
+    Dialog,
+    RippleModule,
   ],
   providers: [DialogService],
 })
