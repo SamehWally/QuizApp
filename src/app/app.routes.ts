@@ -11,12 +11,12 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    // canActivate: [authGuard],
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./features/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
   },
-  
+
   { path: '**', component: NotFoundComponent, title: 'Not Founded ' },
 ];

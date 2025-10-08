@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentGuard } from '../../core/guards/student.guard';
 import { InstructorGuard } from '../../core/guards/instructor.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -16,7 +15,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'instructor', pathMatch: 'full' },
       {
         path: 'student',
-        // canActivate: [StudentGuard],
+        canActivate: [StudentGuard],
         loadChildren: () =>
           import('../dashboard/student/student.module').then(
             (m) => m.StudentModule
@@ -24,7 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'instructor',
-        // canActivate: [InstructorGuard],
+        canActivate: [InstructorGuard],
         loadChildren: () =>
           import('../dashboard/instructor/instructor.module').then(
             (m) => m.InstructorModule
@@ -39,7 +38,7 @@ const routes: Routes = [
   imports: [
     SharedModule,
     CommonModule,
-  
+
     NavbarInstructorComponent,
     RouterModule.forChild(routes),
   ],
