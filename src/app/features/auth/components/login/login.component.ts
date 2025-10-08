@@ -16,6 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LoginComponent {
   iconStyle: string = 'password-icon-ltr';
   lang: string = 'en';
+  role:string='';
   PasswordPattern: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{1,10}$/;
   loginForm: FormGroup = new FormGroup({
@@ -62,9 +63,14 @@ export class LoginComponent {
         );
         localStorage.setItem('email', res.data.profile.email);
         localStorage.setItem('role', res.data.profile.role);
+        this.role=res.data.profile.role
       },
       complete: () => {
-        this.router.navigate(['/dashboard']);
+        if(this.role == 'Student'){
+          this.router.navigate(['/dashboard/student']);
+        }else{
+          this.router.navigate(['/dashboard']);
+        }
       },
     });
   }

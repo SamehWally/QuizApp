@@ -80,7 +80,7 @@
     "edit": "Edit"
   },
   "group": {
-    "add-buttun": "Add Group",
+    "addButtun": "Add Group",
     "group": "Group",
     "noOfStudents": "No. of students:",
     "AddGroup": "Set up a new Group",
@@ -120,6 +120,19 @@
     "otp": "otp",
     "Reset": "Reset"
   },
+  "studentModule":{
+    "joinQuiz":"Join Quiz",
+    "upcomingQuizzes":"Upcoming Quizzes",
+    "completedQuizzes":"Completed Quizzes",
+    "table":{
+      "title":"Title",
+      "status":"Status",
+      "difficulty":"Difficulty",
+      "date":"Date"
+    },
+    "code":"Code",
+    "SuccessJoin":"Quiz joined successfully",
+    "closebtn":"Close"
   "results": {
     "contnent": "Completed Quizzes",
     "Title": "Title",

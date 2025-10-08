@@ -17,5 +17,6 @@ export const routes: Routes = [
         (m) => m.DashboardModule
       ),
   },
+  
   { path: '**', component: NotFoundComponent, title: 'Not Founded ' },
 ];

@@ -1,0 +1,86 @@
+<div class="container mt-2">
+  <div class="row g-2">
+    <div class="col-12">
+      <div class="start-quiz">
+        <button (click)="openModal()">
+          <img src="../../../../../../assets/images/new quiz icon.png" alt="" />
+          <h4>{{'studentModule.joinQuiz'|translate}}</h4>
+        </button>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="item">
+        <h4>{{'studentModule.upcomingQuizzes'|translate}}</h4>
+        <div class="quiz-card d-flex align-items-center gap-3">
+          <img src="./assets/images/Quizimg.svg" alt="quiz" />
+          <div class="quiz-info ms-3">
+            <h6 class="mb-1">Introduction to computer programming</h6>
+            <small class="text-muted">12 / 03 / 2023 | 09:00 AM</small><br />
+          </div>
+          <div class="quiz-open ms-auto">
+            {{ "home.open" | translate }}
+            <i
+              [ngClass]="
+                controlDirection() === 'rtl'
+                  ? 'fa-solid fa-circle-left'
+                  : 'fa-solid fa-circle-right'
+              "
+            ></i>
+          </div>
+        </div>
+        <div class="quiz-card d-flex align-items-center gap-3">
+          <img src="../../../../../../assets/images/Quiz img.png" alt="quiz" />
+          <div class="quiz-info ms-3">
+            <h6 class="mb-1">Psychology 101</h6>
+            <small class="text-muted">12 / 03 / 2023 | 09:00 AM</small><br />
+          </div>
+          <div class="quiz-open ms-auto">
+            {{ "home.open" | translate }}
+            <i
+              [ngClass]="
+                controlDirection() === 'rtl'
+                  ? 'fa-solid fa-circle-left'
+                  : 'fa-solid fa-circle-right'
+              "
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="item">
+        <h4>{{'studentModule.completedQuizzes'|translate}}</h4>
+        <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <td>{{'studentModule.table.title'|translate}}</td>
+              <td>{{'studentModule.table.status'|translate}}</td>
+              <td>{{'studentModule.table.difficulty'|translate}}</td>
+              <td>{{'studentModule.table.date'|translate}}</td>
+            </tr>
+          </thead>
+          <tbody>
+            @if (Completed.length > 0){
+              @for (item of Completed; track $index) {
+                <tr>
+                  <td>{{item.title}}</td>
+                  <td>{{item.status}}</td>
+                  <td>{{item.difficulty}}</td>
+                  <td>{{item.closed_at| date : 'dd MMM yyyy'}}</td>
+                </tr>
+              }
+            }@else {
+              <tr>
+                <td colspan="4" class="text-center">
+                <img src="./assets/images/No data.gif" class="nodata" alt="">
+              </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

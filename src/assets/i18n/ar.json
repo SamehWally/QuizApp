@@ -110,6 +110,21 @@
     "otp": "كلمة مرور لمرة واحدة",
     "Reset": "إعادة ضبط"
   },
+  "studentModule": {
+  "joinQuiz": "انضم إلى الاختبار",
+  "upcomingQuizzes": "الاختبارات القادمة",
+  "completedQuizzes": "الاختبارات المنتهية",
+  "table": {
+    "title": " الاختبار",
+    "status":"الحاله",
+    "difficulty":"مستوي الامتحان",
+    "date": "التاريخ"
+  },
+  "code": "الرمز",
+  "SuccessJoin": "تم الانضمام إلى الاختبار بنجاح",
+  "closebtn": "إغلاق"
+}
+}
   "results": {
     "contnent": "الاختبارات المكتملة",
     "Title": "العنوان",
