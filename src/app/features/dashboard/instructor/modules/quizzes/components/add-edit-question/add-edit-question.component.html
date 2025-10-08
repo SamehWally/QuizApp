@@ -1,0 +1,103 @@
+<div class="container-fluid w-100 h-auto p-0 m-0">
+
+    <div class="row border-bottom text-center">
+        <div class="col-8 border-start py-3">
+            <span>{{ actionKey | translate }}</span>
+        </div>
+        <div (click)="addEditQuestion()" class="col-2 border-start py-3 IconSave">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div (click)="closeDialogWithSuccess()" class="col-2 border-start py-3 IconClose">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+
+    <div class="p-3">
+        <form [formGroup]="formsGroup" (ngSubmit)="addEditQuestion()">
+            <div class="row g-3">
+
+                <!-- Title -->
+                <div class="col-md-12">
+                    <p-inputGroup>
+                        <p-inputGroupAddon class="bg-label">{{ 'addEditQuestion.Title' | translate
+                            }}</p-inputGroupAddon>
+                        <input pInputText [placeholder]="'addEditQuestion.PlaceholderTitle' | translate"
+                            formControlName="title" />
+                    </p-inputGroup>
+                    <small class="text-danger"
+                        *ngIf="formsGroup.get('title')?.invalid && formsGroup.get('title')?.touched">
+                        {{ 'validation.TitleRequired' | translate }}
+                    </small>
+                </div>
+
+                <!-- Description -->
+                <div class="col-md-12">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>{{ 'addEditQuestion.Description' | translate }}</p-inputGroupAddon>
+                        <textarea pInputTextarea formControlName="description"
+                            [placeholder]="'addEditQuestion.PlaceholderDescription' | translate" rows="4"
+                            style="resize: none; width: 100%;"></textarea>
+                    </p-inputGroup>
+                </div>
+
+                <!-- Options -->
+                <div formGroupName="options" class="row gx-1 gy-2 mt-2 ps-2">
+                    <div class="col-md-6" *ngFor="let opt of ['A','B','C','D']">
+                        <p-inputGroup>
+                            <p-inputGroupAddon>{{ 'addEditQuestion.Option' | translate }} {{ opt }}</p-inputGroupAddon>
+                            <input pInputText
+                                placeholder="{{ 'addEditQuestion.PlaceholderOption' | translate }} {{ opt }}"
+                                [formControlName]="opt" />
+                        </p-inputGroup>
+                        <small class="text-danger"
+                            *ngIf="formsGroup.get('options.' + opt)?.invalid && formsGroup.get('options.' + opt)?.touched">
+                            {{ 'validation.OptionRequired' | translate }} {{ opt }}
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Answer -->
+                <div class="col-md-4">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>{{ 'addEditQuestion.Answer' | translate }}</p-inputGroupAddon>
+                        <input pInputText [placeholder]="'addEditQuestion.PlaceholderAnswer' | translate"
+                            formControlName="answer" />
+                    </p-inputGroup>
+                    <small class="text-danger"
+                        *ngIf="formsGroup.get('answer')?.invalid && formsGroup.get('answer')?.touched">
+                        {{ 'validation.AnswerRequired' | translate }}
+                    </small>
+                </div>
+
+                <!-- Difficulty Dropdown -->
+                <div class="col-md-4">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>{{ 'addEditQuestion.Difficulty' | translate }}</p-inputGroupAddon>
+                        <p-dropdown [options]="difficultyList" formControlName="difficulty"
+                            [placeholder]="'addEditQuestion.PlaceholderDifficulty' | translate" optionLabel="label"
+                            optionValue="value" styleClass="w-full"></p-dropdown>
+                    </p-inputGroup>
+                    <small class="text-danger"
+                        *ngIf="formsGroup.get('difficulty')?.invalid && formsGroup.get('difficulty')?.touched">
+                        {{ 'validation.DifficultyRequired' | translate }}
+                    </small>
+                </div>
+
+                <!-- Type Dropdown -->
+                <div class="col-md-4">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>{{ 'addEditQuestion.Type' | translate }}</p-inputGroupAddon>
+                        <p-dropdown [options]="typeList" formControlName="type"
+                            [placeholder]="'addEditQuestion.PlaceholderType' | translate" optionLabel="label"
+                            optionValue="value" styleClass="w-full"></p-dropdown>
+                    </p-inputGroup>
+                    <small class="text-danger"
+                        *ngIf="formsGroup.get('type')?.invalid && formsGroup.get('type')?.touched">
+                        {{ 'validation.TypeRequired' | translate }}
+                    </small>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

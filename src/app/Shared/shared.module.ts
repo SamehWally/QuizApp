@@ -12,6 +12,11 @@ import { PaginatorModule } from 'primeng/paginator';
 import { MessageModule } from 'primeng/message';
 import { Dialog } from 'primeng/dialog';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { TableModule } from 'primeng/table';
+import { Tag } from 'primeng/tag';
+import { InputIcon } from 'primeng/inputicon';
+import { IconField } from 'primeng/iconfield';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [SidebarComponent],
@@ -26,6 +31,13 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     MessageModule,
     Dialog,
     AutoCompleteModule,
+
+    TableModule,
+    Tag,
+    ButtonModule,
+    IconField,
+    InputIcon,
+    HttpClientModule,
   ],
   exports: [
     SidebarComponent,
@@ -37,6 +49,12 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     MessageModule,
     Dialog,
     AutoCompleteModule,
+    TableModule,
+    Tag,
+    ButtonModule,
+    IconField,
+    InputIcon,
+    HttpClientModule,
   ],
 })
 export class SharedModule {}

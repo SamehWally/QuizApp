@@ -1,0 +1,20 @@
+<div class="container-fluid w-100 h-auto p-0 m-0">
+
+    <div class="row border-bottom text-center">
+        <div class="col-8 border-start py-3">
+            <span>{{ "deleteQuestion.title" | translate }}</span>
+        </div>
+        <div (click)="deleteQuestion()" class="col-2 border-start py-3 IconSave">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div (click)="closeDialogWithSuccess()" class="col-2 border-start py-3 IconClose">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="text-center">
+        <img src="/delete.gif" class="w-50" alt="">
+        <h5 class="text-danger mx-2 my-4"> <i class="pi  pi-trash px-2"></i> {{question}}</h5>
+
+    </div>
+
+</div>

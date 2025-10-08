@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentGuard } from '../../core/guards/student.guard';
 import { InstructorGuard } from '../../core/guards/instructor.guard';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -38,6 +39,7 @@ const routes: Routes = [
   imports: [
     SharedModule,
     CommonModule,
+  
     NavbarInstructorComponent,
     RouterModule.forChild(routes),
   ],

@@ -24,7 +24,9 @@
     "changePassword": "Change Password",
     "logout": "Logout",
     "newQuiz": "New Quiz",
-    "Dashboard": "Dashboard"
+    "Dashboard": "Dashboard",
+    "Arabic": "Arabic",
+    "English": "English"
   },
   "register": {
     "contnent": "Create your account and start using QuizWiz!",
@@ -131,5 +133,65 @@
     "code":"Code",
     "SuccessJoin":"Quiz joined successfully",
     "closebtn":"Close"
+  "results": {
+    "contnent": "Completed Quizzes",
+    "Title": "Title",
+    "Group-name": "Group name",
+    "Difficulty": "Difficulty",
+    "Type": "Type",
+    "Points": "Points",
+    "Answer": "Answer",
+    "buttun": "view",
+    "Student": "Student",
+    "Score": "Score",
+    "Average": "Average",
+    "Time_submitted": "Time submitted",
+    "Results": "Results",
+    "Quizzes": "Quizzes",
+    "Data": "Data structures quiz one"
+  },
+  "questionBank": {
+    "addButton": "Add Question",
+    "BankOfQuestions": "Question Bank",
+    "Clear": "Clear",
+    "SearchQuestion": "Search for a question...",
+    "Title": "Title",
+    "Category": "Category",
+    "Answer": "Answer",
+    "Difficulty": "Difficulty",
+    "Type": "Type",
+    "Status": "Status",
+    "Actions": "Actions",
+    "Search": "Search",
+    "NoQuestionsAvailable": "No questions available",
+    "Showing": "Showing {{first}} to {{last}} of {{totalRecords}} entries"
+  },
+  "addEditQuestion": {
+    "AddQuestion": "Add Question",
+    "EditQuestion": "Edit Question",
+    "Title": "Title",
+    "Description": "Description",
+    "Difficulty": "Difficulty",
+    "Type": "Type",
+    "Option": "Option",
+    "Answer": "Answer",
+    "PlaceholderTitle": "Enter question title",
+    "PlaceholderDescription": "Enter question description",
+    "PlaceholderOption": "Enter option",
+    "PlaceholderAnswer": "Enter correct answer (A, B, C, D)",
+    "PlaceholderDifficulty": "Select difficulty",
+    "PlaceholderType": "Select question type",
+    "ViewQuestion": "View Question"
+  },
+  "validation": {
+    "TitleRequired": "Title is required",
+    "OptionRequired": "Option is required",
+    "AnswerRequired": "Answer is required",
+    "DifficultyRequired": "Difficulty is required",
+    "TypeRequired": "Type is required"
+  },
+  "deleteQuestion": {
+    "title": "Delete Question",
+    "actionKey": "Are you sure you want to delete this question?"
   }
 }

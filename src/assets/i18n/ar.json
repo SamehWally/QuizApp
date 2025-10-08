@@ -24,7 +24,9 @@
     "changePassword": "تغيير كلمة المرور",
     "logout": "تسجيل الخروج",
     "newQuiz": "اختبار جديد",
-    "Dashboard": "لوحة التحكم"
+    "Dashboard": "لوحة التحكم",
+    "Arabic": "العربية",
+    "English": "الإنجليزية"
   },
   "register": {
     "contnent": "قم بإنشاء حسابك وابدأ باستخدام QuizWiz!",
@@ -122,4 +124,66 @@
   "SuccessJoin": "تم الانضمام إلى الاختبار بنجاح",
   "closebtn": "إغلاق"
 }
+}
+  "results": {
+    "contnent": "الاختبارات المكتملة",
+    "Title": "العنوان",
+    "Group-name": "اسم المجموعة",
+    "Difficulty": "درجة الصعوبة",
+    "Type": "النوع",
+    "Points": "النقاط",
+    "Answer": "الإجابة",
+    "buttun": "عرض ",
+    "Student": "الطالب",
+    "Score": "الدرجة",
+    "Average": "المتوسط",
+    "Time_submitted": "وقت الإرسال",
+    "Results": "النتائج",
+    "Quizzes": "الاختبارات",
+    "Data": "اختبار هياكل البيانات الأول"
+  },
+  "questionBank": {
+    "addButton": "إضافة سؤال",
+    "BankOfQuestions": "بنك الأسئلة",
+    "Clear": "مسح",
+    "SearchQuestion": "ابحث عن سؤال...",
+    "Title": "العنوان",
+    "Category": "التصنيف",
+    "Answer": "الإجابة",
+    "Difficulty": "الصعوبة",
+    "Type": "النوع",
+    "Status": "الحالة",
+    "Actions": "الإجراءات",
+    "Search": "بحث",
+    "NoQuestionsAvailable": "لا توجد أسئلة متاحة",
+    "Showing": "عرض {{first}} إلى {{last}} من إجمالي {{totalRecords}} سجل"
+  },
+  "addEditQuestion": {
+    "AddQuestion": "إضافة سؤال",
+    "EditQuestion": "تعديل سؤال",
+    "Title": "العنوان",
+    "Description": "الوصف",
+    "Difficulty": "مستوى الصعوبة",
+    "Type": "النوع",
+    "Option": "خيار",
+    "Answer": "الإجابة",
+    "PlaceholderTitle": "أدخل عنوان السؤال",
+    "PlaceholderDescription": "أدخل وصف السؤال",
+    "PlaceholderOption": "أدخل الخيار",
+    "PlaceholderAnswer": "أدخل الإجابة الصحيحة (A، B، C، D)",
+    "PlaceholderDifficulty": "اختر مستوى الصعوبة",
+    "PlaceholderType": "اختر نوع السؤال",
+    "ViewQuestion": "عرض سؤال"
+  },
+  "validation": {
+    "TitleRequired": "يجب إدخال العنوان",
+    "OptionRequired": "يجب إدخال الخيار",
+    "AnswerRequired": "يجب إدخال الإجابة",
+    "DifficultyRequired": "يجب اختيار مستوى الصعوبة",
+    "TypeRequired": "يجب اختيار النوع"
+  },
+  "deleteQuestion": {
+    "title": "حذف السؤال",
+    "actionKey": "هل أنت متأكد أنك تريد حذف هذا السؤال؟"
+  }
 }
