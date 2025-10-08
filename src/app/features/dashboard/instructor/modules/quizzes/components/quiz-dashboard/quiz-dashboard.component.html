@@ -4,12 +4,11 @@
       <div class="col-6">
         <div class="switch-buttons">
           <div class="d-flex gap-3">
-            <div class="">
+            <div class="" style="width: 200px; height: 150px">
               <button
                 type="button"
-                class="rout-btn"
-                (click)="showDialog({}, 1)"
-                routerLink="/dashboard/instructor/quizzes/add"
+                class="rout-btn h-100 w-100"
+                (click)="showDialog()"
                 routerLinkActive="active"
               >
                 <span
@@ -19,17 +18,20 @@
                     src="../../../../../../../../assets/images/new quiz icon.png"
                     alt=""
                   />
-                  <p class="mb-0 text-black">
+                  <p
+                    class="mb-0 mt-2 text-black fw-bold"
+                    style="font-size: 20px"
+                  >
                     {{ "quiz.newQuiz" | translate }}
                   </p>
                 </span>
               </button>
             </div>
-            <div class="">
+            <div class="" style="width: 200px; height: 150px">
               <button
                 type="button"
-                class="rout-btn"
-                routerLink="/auth/register"
+                class="rout-btn w-100 h-100"
+                routerLink="/dashboard/instructor/quizzes/questionBank"
                 routerLinkActive="active"
               >
                 <span
@@ -39,7 +41,10 @@
                     src="../../../../../../../../assets/images/Vault icon.png"
                     alt=""
                   />
-                  <p class="text-black mb-0">
+                  <p
+                    class="text-black mb-0 mt-2 fw-bold"
+                    style="font-size: 20px"
+                  >
                     {{ "quiz.questionBank" | translate }}
                   </p>
                 </span>
@@ -50,72 +55,81 @@
       </div>
 
       <div class="col-6">
-        <div class="p-3" style="border: 1px solid #00000033">
-          <h3 class="mb-3">Upcoming quizzes</h3>
-
-          <div
-            class="d-flex mb-3"
-            style="
-              border: 1px solid #00000033;
-              border-radius: 10px;
-              overflow: hidden;
-            "
-          >
+        <div>
+          <div class="p-3 mb-3" style="border: 1px solid #00000033">
+            <h3 class="mb-3">{{ "quiz.upcomingQuizzes" | translate }}</h3>
             <div
-              class="me-3"
-              style="padding: 5px; background-color: #ffeddf; width: 180px"
+              *ngFor="let quiz of incomming"
+              class="d-flex mb-3"
+              style="
+                border: 1px solid #00000033;
+                border-radius: 10px;
+                overflow: hidden;
+              "
             >
-              <img class="w-100" src="./assets/images/Quiz-img.png" alt="" />
-            </div>
-            <div
-              class="d-flex flex-column justify-content-between w-100 py-3"
-              style="box-sizing: border-box"
-            >
-              <div>
-                <h5>Introduction to computer programming</h5>
-                <p>12 / 03 / 2023 | 09:00 AM</p>
+              <div
+                class="me-3"
+                style="padding: 5px; background-color: #ffeddf; width: 180px"
+              >
+                <img
+                  class="w-100 p-3"
+                  src="./assets/images/Quiz-img.png"
+                  alt="Quiz Image"
+                />
               </div>
-              <div class="mt-3 d-flex justify-content-between align-items-end">
-                <p class="mb-0">No. of student’s enrolled: 32</p>
-                <a
-                  class="me-3 quiz-open"
-                  routerLink="/dashboard/instructor/quizzes/details"
-                  >Open <i class="fa-solid fa-circle-right"></i
-                ></a>
+
+              <div
+                class="d-flex flex-column justify-content-between w-100 py-3"
+                style="box-sizing: border-box"
+              >
+                <div>
+                  <h5>{{ quiz.title }}</h5>
+                  <p>{{ quiz.schadule | date : "dd/MM/yyyy | hh:mm a" }}</p>
+                </div>
+                <div
+                  class="mt-3 d-flex justify-content-between align-items-end"
+                >
+                  <p class="mb-0">
+                    No. of student’s enrolled: {{ quiz.enrolled_count || 0 }}
+                  </p>
+                  <a
+                    class="me-3 quiz-open"
+                    [routerLink]="[
+                      '/dashboard/instructor/quizzes/details',
+                      quiz._id
+                    ]"
+                  >
+                    Open <i class="fa-solid fa-circle-right"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="d-flex"
-            style="
-              border: 1px solid #00000033;
-              border-radius: 10px;
-              overflow: hidden;
-            "
-          >
-            <div
-              class="me-3"
-              style="padding: 5px; background-color: #ffeddf; width: 180px"
+          <div class="p-3" style="border: 1px solid #00000033">
+            <h3 class="mb-3">{{ "quiz.completedQuizzes" | translate }}</h3>
+
+            <p-table
+              [value]="completed"
+              [tableStyle]="{ 'min-width': '20rem' }"
             >
-              <img class="w-100" src="./assets/images/Quiz-img.png" alt="" />
-            </div>
-            <div
-              class="d-flex flex-column justify-content-between w-100 py-3"
-              style="box-sizing: border-box"
-            >
-              <div>
-                <h5>Introduction to computer programming</h5>
-                <p>12 / 03 / 2023 | 09:00 AM</p>
-              </div>
-              <div class="mt-3 d-flex justify-content-between align-items-end">
-                <p class="mb-0">No. of student’s enrolled: 32</p>
-                <a
-                  class="me-3 quiz-open"
-                  routerLink="/dashboard/instructor/quizzes/details"
-                  >Open <i class="fa-solid fa-circle-right"></i
-                ></a>
-              </div>
-            </div>
+              <ng-template pTemplate="header">
+                <tr>
+                  <th>Title</th>
+                  <th>Group name</th>
+                  <th>No. of persons in group</th>
+                  <th>Date</th>
+                </tr>
+              </ng-template>
+
+              <ng-template pTemplate="body" let-quiz>
+                <tr>
+                  <td>{{ quiz.title }}</td>
+                  <td>{{ quiz.group }}</td>
+                  <td>{{ quiz.enrolled_count || 0 }}</td>
+                  <td>{{ quiz.schadule | date : "dd/MM/yyyy" }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
           </div>
         </div>
       </div>

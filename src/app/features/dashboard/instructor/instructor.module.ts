@@ -31,13 +31,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/quizzes/quizzes.module').then((m) => m.QuizzesModule),
   },
-  { path: 'results', component: ResultsComponent, title: 'Results' ,
-  children: [
-    { path: '', redirectTo:"completed",pathMatch:"full"},
-     { path: 'completed', component: CompletedQuizzesComponent },
-    { path: 'result/:id', component: QuizzesResultsComponent }
-  ] },
-  
+  {
+    path: 'results',
+    component: ResultsComponent,
+    title: 'Results',
+    children: [
+      { path: '', redirectTo: 'completed', pathMatch: 'full' },
+      { path: 'completed', component: CompletedQuizzesComponent },
+      { path: 'result/:id', component: QuizzesResultsComponent },
+    ],
+  },
 ];
 
 @NgModule({

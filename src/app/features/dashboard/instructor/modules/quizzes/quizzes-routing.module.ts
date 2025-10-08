@@ -8,7 +8,11 @@ import { QuestionBankComponent } from './components/question-bank/question-bank.
 const routes: Routes = [
   { path: '', component: QuizDashboardComponent, title: 'Quizzes' },
   { path: 'add', component: AddQuizComponent, title: 'Add Quiz' },
-  { path: 'details', component: QuizDetailsComponent, title: 'Quiz Details' },
+  {
+    path: 'details/:id',
+    component: QuizDetailsComponent,
+    title: 'Quiz Details',
+  },
   {
     path: 'questionBank',
     component: QuestionBankComponent,

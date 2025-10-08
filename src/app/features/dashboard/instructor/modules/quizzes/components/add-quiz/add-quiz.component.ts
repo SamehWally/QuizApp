@@ -13,10 +13,8 @@ import { ToastService } from '../../../../../../../core/services/toast.service';
 import { QuizService } from '../../services/quiz.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-// import { IStudentWithoutGroup } from '../../../interfaces/IStudentWithoutGroup';
-// import { StudentService } from '../../../services/student.service';
-// import { IStudentGroup } from '../../../interfaces/IStudentGroup';
-// import { ToastService } from '../../../../../../../../core/services/toast.service';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { QuizCodeComponent } from '../quiz-code/quiz-code.component';
 
 // export interface QuizForm {
 //   title: string;
@@ -38,45 +36,29 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 // export class AddQuizComponent implements OnInit, OnChanges {
 export class AddQuizComponent implements OnInit {
+  //#region injections
   private readonly _quizService = inject(QuizService);
   private readonly _toast = inject(ToastService);
+  //#endregion
 
-  @Input() studentData: any;
-  @Input() FormID!: number;
-  @Output() closeDialog = new EventEmitter<void>();
-
-  // studentValue!: IStudentWithoutGroup;
-  // studentGroup!: any;
-
-  // students: IStudentWithoutGroup[] = [];
-  // filteredStudents: IStudentWithoutGroup[] = [];
-
+  //#region variables
   studentGroups: any[] = [];
-  // selectedGroup: any;
-
   durationOptions: any[] = [];
   numberQuestionsOptions: any[] = [];
   scorePerQuestionsOptions: any[] = [];
   categoryOptions: any[] = [];
   difficultyOptions: any[] = [];
   scheduledDate: any;
-  // selectedDuration: any;
 
-  // filteredStudentGroups: IStudentGroup[] = [];
-
-  // Quiz Form
-  // title: string = '';
-  // selectedDuration: any;
-  // selectedNumberQuestions: any;
-  // selectedscorePerQuestion: any;
-  // description: string = '';
-  // scheduledDate: Date = new Date();
-  // selectedDifficulty: any;
-  // selectedCategory: any;
-  // selectedGroup: any;
   quizForm!: FormGroup;
+  //#endregion
 
-  constructor(private _http: HttpClient) {
+  //#region constructor
+  constructor(
+    public ref: DynamicDialogRef,
+    private _dialogService: DialogService,
+    private _http: HttpClient
+  ) {
     this.quizForm = new FormGroup({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
@@ -104,33 +86,11 @@ export class AddQuizComponent implements OnInit {
       ),
     });
   }
+  //#endregion
 
-  // submitForm() {
-  //   const payload = {
-  //     title: this.title,
-  //     description: this.description,
-  //     group: this.selectedGroup?.value,
-  //     questions_number: this.selectedNumberQuestions?.value,
-  //     difficulty: this.selectedDifficulty?.value,
-  //     type: this.selectedCategory?.value,
-  //     schadule: new Date(this.scheduledDate).toISOString(),
-  //     duration: this.selectedDuration?.value,
-  //     score_per_question: this.selectedscorePerQuestion?.value,
-  //   };
-
-  // console.log('Quiz Payload:', payload);
-  // this._http
-  //   .post('https://upskilling-egypt.com:3005/api/quiz', payload)
-  //   .subscribe({
-  //     next: (res: any) => console.log('تم الإرسال بنجاح', res),
-  //   });
-
-  // }
-
+  //#region ngOnInit
   ngOnInit(): void {
     this.getAllGroups();
-    // this.quizForm.get('duration')?.setValue({ label: '15', value: 15 });
-
     this.durationOptions = [
       { label: '10', value: 10 },
       { label: '15', value: 15 },
@@ -154,231 +114,68 @@ export class AddQuizComponent implements OnInit {
       { label: 'BE', value: 2 },
     ];
 
-    // selectedCategory = this.CategoryOptions[1]; // القيمة الافتراضية: 10
-
     this.difficultyOptions = [
       { label: 'easy', value: 1 },
       { label: 'medium', value: 2 },
       { label: 'hard', value: 3 },
     ];
 
-    // selectedDifficulty = this.DifficultyOptions[1];
-
     this.scheduledDate = new Date('2023-05-11T13:00:00');
-    // const groupValue = this.quizForm.get('duration')?.value;
-    // console.log(
-    //   'label due',
-    //   this.durationOptions.find((g) => g.value === groupValue)?.label
-    // );
-
-    // console.log('Duration Options:', this.durationOptions);
-
-    // setTimeout(() => {
-    //   this.quizForm.get('duration')?.setValue(15);
-    // });
   }
+  //#endregion
 
-  // get selectedDurationLabel(): string | undefined {
-  //   const groupValue = this.quizForm.get('duration')?.value;
-  //   console.log(
-  //     'label group',
-  //     this.durationOptions.find((g) => g.value === groupValue)?.label
-  //   );
-  //   return this.durationOptions.find((g) => g.value === groupValue)?.label;
-  // }
-
-  // get selectedDurationLabel(): string | undefined {
-  //   console.log('duration value:', this.quizForm.get('duration')?.value);
-
-  //   const value = this.quizForm.get('duration')?.value;
-  //   if (!this.durationOptions || this.durationOptions.length === 0) return '';
-  //   return this.durationOptions.find((opt) => opt.value === value)?.label;
-  // }
-
-  // get selectedQueNumberLabel(): string | undefined {
-  //   const groupValue = this.quizForm.get('questions_number')?.value;
-  //   console.log(
-  //     'label group',
-  //     this.studentGroups.find((g) => g.value === groupValue)?.label
-  //   );
-  //   return this.studentGroups.find((g) => g.value === groupValue)?.label;
-  // }
-
-  get selectedScoreLabel(): string | undefined {
-    const groupValue = this.quizForm.get('score_per_question')?.value;
-    console.log(
-      'label group',
-      this.studentGroups.find((g) => g.value === groupValue)?.label
-    );
-    return this.studentGroups.find((g) => g.value === groupValue)?.label;
-  }
-
-  get selectedDifficultyLabel(): string | undefined {
-    const groupValue = this.quizForm.get('difficulty')?.value;
-    console.log(
-      'label group',
-      this.studentGroups.find((g) => g.value === groupValue)?.label
-    );
-    return this.studentGroups.find((g) => g.value === groupValue)?.label;
-  }
-
-  get selectedTypeLabel(): string | undefined {
-    const groupValue = this.quizForm.get('type')?.value;
-    console.log(
-      'label group',
-      this.studentGroups.find((g) => g.value === groupValue)?.label
-    );
-    return this.studentGroups.find((g) => g.value === groupValue)?.label;
-  }
-
-  // get selectedGroupLabel(): string | undefined {
-  //   const groupValue = this.quizForm.get('group')?.value;
-  //   console.log(
-  //     'label group',
-  //     this.studentGroups.find((g) => g.value === groupValue)?.label
-  //   );
-  //   return this.studentGroups.find((g) => g.value === groupValue)?.label;
-  // }
-
+  //#region submitForm
   submitForm() {
-    const raw = this.quizForm.value;
+    if (this.quizForm.valid) {
+      const raw = this.quizForm.value;
 
-    const payload = {
-      title: raw.title,
-      description: raw.description,
-      group: raw.group?.value || raw.group,
-      questions_number: raw.questions_number?.value || raw.questions_number,
-      difficulty: raw.difficulty?.label || raw.difficulty,
-      type: raw.type?.label || raw.type,
-      schadule: new Date(raw.scheduledDate).toISOString(),
-      duration: raw.duration?.label || raw.duration,
-      score_per_question:
-        raw.score_per_question?.label || raw.score_per_question,
-    };
+      const payload = {
+        title: raw.title,
+        description: raw.description,
+        group: raw.group?.value || raw.group,
+        questions_number: raw.questions_number?.value || raw.questions_number,
+        difficulty: raw.difficulty?.label || raw.difficulty,
+        type: raw.type?.label || raw.type,
+        schadule: new Date(raw.scheduledDate).toISOString(),
+        duration: raw.duration?.label || raw.duration,
+        score_per_question:
+          raw.score_per_question?.label || raw.score_per_question,
+      };
 
-    console.log('Reactive Payload:', payload);
-    // this._http.post('API_URL', payload).subscribe(...)
-    this._quizService.addQuiz(payload).subscribe({
-      next: (res: any) => {
-        console.log('✅ تم الإرسال بنجاح:', res);
-        this._toast.showSuccess('تم إنشاء الكويز بنجاح 🎉');
-      },
-    });
+      console.log('Reactive Payload:', payload);
+      this._quizService.addQuiz(payload).subscribe({
+        next: (res: any) => {
+          this._toast.showSuccess('تم إنشاء الكويز بنجاح 🎉');
+
+          console.log('Add Quiz Response:', res);
+
+          this._dialogService.open(QuizCodeComponent, {
+            data: {
+              code: res.data.code || 'غير متوفر',
+            },
+            width: '400px',
+            height: '320px',
+            baseZIndex: 10000,
+          });
+          this.ref.close();
+        },
+      });
+    } else {
+      this.quizForm.markAllAsTouched();
+    }
   }
+  //#endregion
 
-  //   next: (res) => {
-
-  //   },
-  //   error: (err) => {
-  //     console.error('❌ حصل خطأ أثناء الإرسال:', err);
-  //     this._toast.error('فيه مشكلة في إرسال الكويز 😢');
-  //   },
-  // });
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if (changes['studentData'] && this.studentData) {
-  //     this.setInitialValues();
-  //   }
-  // }
-
-  // getStudents() {
-  //   if (this.FormID === 1) {
-  //     this._StudentService.getStudentsWithoutGroup().subscribe({
-  //       next: (res) => {
-  //         console.log('fullName', res);
-  //         this.students = res.map((s) => ({
-  //           ...s,
-  //           fullName: `${s.first_name} ${s.last_name}`,
-  //         }));
-  //       },
-  //     });
-  //   } else if (this.FormID === 2) {
-  //     this._StudentService.getStudents().subscribe({
-  //       next: (res) => {
-  //         this.students = res.map((s) => ({
-  //           ...s,
-  //           fullName: `${s.first_name} ${s.last_name}`,
-  //         }));
-  //       },
-  //     });
-  //   }
-  //   this.setInitialValues();
-  // }
-
+  //#region getAllGroups
   getAllGroups() {
     this._quizService.getAllGroups().subscribe({
       next: (res) => {
-        // this.studentGroups = res;
-        // console.log('Groups', res);
         this.studentGroups = res.map((item: any) => ({
-          label: item.name, // أو أي اسم مناسب للعرض
-          value: item._id, // أو القيمة اللي هتستخدمها
+          label: item.name,
+          value: item._id,
         }));
-        console.log('Mapped Groups', this.studentGroups);
-        // if (this.studentGroups.length > 0) {
-        //   this.quizForm.get('group')?.setValue(this.studentGroups[1].value);
-        // }
       },
     });
   }
-
-  // private setInitialValues() {
-  //   if (this.studentData) {
-  //     let foundStudent: IStudentWithoutGroup | undefined;
-
-  //     if (this.students.length > 0) {
-  //       foundStudent = this.students.find(
-  //         (s) => s._id === this.studentData._id
-  //       );
-  //     }
-
-  //     if (foundStudent) {
-  //       this.studentValue = foundStudent;
-  //     } else if (this.studentData.first_name && this.studentData.last_name) {
-  //       this.studentValue = {
-  //         ...this.studentData,
-  //         fullName: `${this.studentData.first_name} ${this.studentData.last_name}`,
-  //       } as IStudentWithoutGroup;
-  //     }
-
-  //     if (this.studentGroups.length > 0 && this.studentData.group) {
-  //       const foundGroup = this.studentGroups.find(
-  //         (g) => g._id === this.studentData.group._id
-  //       );
-  //       if (foundGroup) {
-  //         this.studentGroup = foundGroup;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // search(event: AutoCompleteCompleteEvent) {
-  //   const query = event.query.toLowerCase();
-  //   this.filteredStudents = this.students.filter((student) =>
-  //     student.fullName?.toLowerCase().includes(query)
-  //   );
-  // }
-
-  // searchGroup(event: AutoCompleteCompleteEvent) {
-  //   const query = event.query.toLowerCase();
-  //   this.filteredStudentGroups = this.studentGroups.filter((group) =>
-  //     group.name?.toLowerCase().includes(query)
-  //   );
-  // }
-
-  close() {
-    this.closeDialog.emit();
-  }
-
-  //   durationOptions = [
-  //   { label: '5', value: 5 },
-  //   { label: '10', value: 10 },
-  //   { label: '15', value: 15 },
-  //   { label: '20', value: 20 }
-  // ];
-
-  // selectedDuration = 10;
-
-  // selectedNumberQuestions = this.numberQuestionsOptions[1]; // القيمة الافتراضية: 10
-
-  // selectedscorePerQuestion = this.scorePerQuestionsOptions[1]; // القيمة الافتراضية: 10
+  //#endregion
 }

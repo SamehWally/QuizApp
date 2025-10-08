@@ -72,6 +72,26 @@
     "delete": "حذف",
     "edit": "تعديل"
   },
+  "quiz": {
+    "newQuiz": "اختبار جديد",
+    "questionBank": "بنك الأسئلة",
+    "NoStudentsInThisGroup": "No students in this group",
+    "upcomingQuizzes": "الاختبارات القادمة",
+    "completedQuizzes": "الاختبارات المكتملة",
+    "details": "التفاصيل",
+    "title": "العنوان:",
+    "duration": "المدة (بالدقائق):",
+    "noOfQuestions": "عدد الأسئلة:",
+    "scorePerQuestion": "النقاط لكل سؤال:",
+    "description": "الوصف:",
+    "schedule": "الجدول الزمني:",
+    "difficultyLevel": "مستوى الصعوبة:",
+    "categoryType": "نوع التصنيف:",
+    "groupName": "اسم المجموعة:",
+    "dateTimeRequired": "تاريخ ووقت البدء مطلوب",
+    "selectDate": "اختر التاريخ",
+    "selectTime": "اختر الوقت"
+  },
   "group": {
     "addButtun": "إضافة مجموعة",
     "group": "المجموعة",

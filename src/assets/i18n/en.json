@@ -75,9 +75,21 @@
   "quiz": {
     "newQuiz": "Set up a new quiz",
     "questionBank": "Question Bank",
-    "NoStudentsInThisGroup": "No students in this group",
-    "delete": "Delete",
-    "edit": "Edit"
+    "upcomingQuizzes": "Upcoming Quizzes",
+    "completedQuizzes": "Completed Quizzes",
+    "details": "Details",
+    "title": "Title:",
+    "duration": "Duration (in minutes):",
+    "noOfQuestions": "No. of questions:",
+    "scorePerQuestion": "Score per question:",
+    "description": "Description",
+    "schedule": "Schedule",
+    "difficultyLevel": "Difficulty level:",
+    "categoryType": "Category type:",
+    "groupName": "Group name:",
+    "dateTimeRequired": "Date and time are required",
+    "selectDate": "Select date",
+    "selectTime": "Select time"
   },
   "group": {
     "addButtun": "Add Group",

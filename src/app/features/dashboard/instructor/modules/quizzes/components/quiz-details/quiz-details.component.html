@@ -5,7 +5,7 @@
       style="border: 1px solid #0000004d; border-radius: 10px"
     >
       <div class="col-10">
-        <h4>Data Structures Quiz One</h4>
+        <h4>{{ quiz?.title }}</h4>
 
         <div class="mb-3">
           <div class="schedule-bar">
@@ -13,15 +13,13 @@
               <!-- التاريخ -->
               <img src="./assets/images/Date-Icon.png" alt="" />
               <span class="date-display" style="margin-left: 8px">
-                <!-- {{ scheduledDate | date : "dd/MM/yyyy" }} -->
-                12 / 03 / 2023
+                {{ quiz?.schadule | date : "dd/MM/yyyy" }}
               </span>
 
               <!-- الوقت -->
               <img src="./assets/images/Time-Icon.png" alt="" />
               <span class="time-display" style="margin-left: 8px">
-                <!-- {{ quizForm.get("scheduledDate")?.value | date : "HH:mm" }} -->
-                09 : 00
+                {{ quiz?.schadule | date : "HH:mm" }}
               </span>
             </div>
           </div>
@@ -30,39 +28,39 @@
         <div class="mb-3">
           <p-inputgroup>
             <p-button label="Duration" />
-            <input pInputText disabled value="10 minutes" />
+            <input pInputText disabled [value]="quiz?.duration + ' minutes'" />
           </p-inputgroup>
         </div>
 
         <div class="mb-3">
           <p-inputgroup>
             <p-button label="Number of questions" />
-            <input pInputText disabled value="15" />
+            <input pInputText disabled [value]="quiz?.questions_number" />
           </p-inputgroup>
         </div>
 
         <div class="mb-3">
           <p-inputgroup>
             <p-button label="Score per question" />
-            <input pInputText disabled value="1" />
+            <input pInputText disabled [value]="quiz?.score_per_question" />
           </p-inputgroup>
         </div>
 
         <div class="mb-3">
           <p-inputgroup>
             <p-button label="Description" />
-            <input
-              pInputText
-              disabled
-              value="Lorem ipsum aset amet consectedur im nascsa assadqw assacsc aidwqdjv asdewfas qwdass Lorem ipsum aset amet consectedur im nascsa assadqw assacsc aidwqdjv"
-            />
+            <input pInputText disabled [value]="quiz?.description" />
           </p-inputgroup>
         </div>
 
         <div class="mb-3">
           <p-inputgroup>
             <p-button label="Question bank used" />
-            <input pInputText disabled value="Bank one" />
+            <input
+              pInputText
+              disabled
+              [value]="quiz?.question_bank_name || 'N/A'"
+            />
           </p-inputgroup>
         </div>
       </div>
