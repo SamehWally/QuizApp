@@ -3,30 +3,16 @@
   <div class="switch-buttons">
     <div class="row justify-content-between gx-5">
       <div class="col-6">
-        <button
-          type="button"
-          class="rout-btn"
-          routerLink="/auth/login"
-          routerLinkActive="active"
-        >
-          <span
-            class="h-100 w-100 d-flex flex-column align-items-center justify-content-center"
-          >
+        <button type="button" class="rout-btn" routerLink="/auth/login" routerLinkActive="active">
+          <span class="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
             <i class="mb-3 pi pi-user" style="font-size: 2.5rem"></i>
             <p class="mb-0">{{ "register.signIn" | translate }}</p>
           </span>
         </button>
       </div>
       <div class="col-6">
-        <button
-          type="button"
-          class="rout-btn"
-          routerLink="/auth/register"
-          routerLinkActive="active"
-        >
-          <span
-            class="h-100 w-100 d-flex flex-column align-items-center justify-content-center"
-          >
+        <button type="button" class="rout-btn" routerLink="/auth/register" routerLinkActive="active">
+          <span class="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
             <i class="mb-3 pi pi-user-plus" style="font-size: 2.5rem"></i>
             <p class="mb-0">{{ "register.signUp" | translate }}</p>
           </span>
@@ -43,16 +29,11 @@
           <div class="Group-auth-input">
             <label for="first_name" class="mb-1">{{
               "register.first_name" | translate
-            }}</label>
+              }}</label>
             <p-iconfield>
               <p-inputicon styleClass="pi pi-user" />
-              <input
-                pInputText
-                id="first_name"
-                formControlName="first_name"
-                placeholder="{{ 'register.first_name' | translate }}"
-                class="auth-input"
-              />
+              <input pInputText id="first_name" formControlName="first_name"
+                placeholder="{{ 'register.first_name' | translate }}" class="auth-input" />
             </p-iconfield>
 
             <div class="auth-errors">
@@ -60,7 +41,7 @@
               registerForm.get('first_name')?.touched){
               <span class="text-danger">{{
                 "register.firstNameErrorRequired" | translate
-              }}</span>
+                }}</span>
               }
             </div>
           </div>
@@ -70,16 +51,11 @@
           <div class="Group-auth-input">
             <label for="last_name" class="mb-1">{{
               "register.last_name" | translate
-            }}</label>
+              }}</label>
             <p-iconfield>
               <p-inputicon styleClass="pi pi-user" />
-              <input
-                pInputText
-                id="last_name"
-                formControlName="last_name"
-                placeholder="{{ 'register.last_name' | translate }}"
-                class="auth-input"
-              />
+              <input pInputText id="last_name" formControlName="last_name"
+                placeholder="{{ 'register.last_name' | translate }}" class="auth-input" />
             </p-iconfield>
 
             <div class="auth-errors">
@@ -87,7 +63,7 @@
               registerForm.get('last_name')?.touched){
               <span class="text-danger">{{
                 "register.lastNameErrorRequired" | translate
-              }}</span>
+                }}</span>
               }
             </div>
           </div>
@@ -98,16 +74,11 @@
       <div class="Group-auth-input">
         <label for="email" class="mb-1">{{
           "register.email" | translate
-        }}</label>
+          }}</label>
         <p-iconfield>
           <p-inputicon styleClass="pi pi-user" />
-          <input
-            pInputText
-            id="email"
-            formControlName="email"
-            placeholder="{{ 'register.email' | translate }}"
-            class="auth-input"
-          />
+          <input pInputText id="email" formControlName="email" placeholder="{{ 'register.email' | translate }}"
+            class="auth-input" />
         </p-iconfield>
 
         <div class="auth-errors">
@@ -115,12 +86,12 @@
           registerForm.get('email')?.touched){
           <span class="text-danger">{{
             "register.emailErrorRequired" | translate
-          }}</span>
+            }}</span>
           } @if(registerForm.get('email')?.hasError('email') &&
           registerForm.get('email')?.touched){
           <span class="text-danger">{{
             "register.validEmailError" | translate
-          }}</span>
+            }}</span>
           }
         </div>
       </div>
@@ -130,14 +101,8 @@
         <label for="role" class="my-1">{{ "register.role" | translate }}</label>
         <p-iconfield>
           <p-inputicon styleClass="pi pi-user" />
-          <p-dropdown
-            formControlName="role"
-            [options]="roles"
-            optionLabel="name"
-            placeholder="Select a role"
-            class="auth-input"
-            [showClear]="true"
-          ></p-dropdown>
+          <p-dropdown formControlName="role" [options]="roles" optionLabel="name" placeholder="Select a role"
+            class="auth-input" [showClear]="true"></p-dropdown>
         </p-iconfield>
 
         <div class="auth-errors">
@@ -145,39 +110,35 @@
           registerForm.get('role')?.touched){
           <span class="text-danger">{{
             "register.roleRequired" | translate
-          }}</span>
+            }}</span>
           }
         </div>
       </div>
 
       <!-- password input -->
-      <div class="Group-auth-input password-input">
+      <div class="Group-auth-input password-input ">
         <label class="my-1">{{ "login.password" | translate }}</label>
         <div class="password-group">
           <i class="pi pi-key" [ngClass]="iconStyle"></i>
-          <p-password
-            formControlName="password"
-            [showClear]="true"
-            [toggleMask]="true"
-            placeholder="{{ 'register.password' | translate }}"
-          />
+          <p-password formControlName="password" [showClear]="true" [toggleMask]="true"
+            placeholder="{{ 'register.password' | translate }}" />
         </div>
         <div class="auth-errors">
           @if(registerForm.get('password')?.hasError('required') &&
           registerForm.get('password')?.touched){
           <span class="text-danger">{{
             "register.passwordRequired" | translate
-          }}</span>
+            }}</span>
           } @if(registerForm.get('password')?.hasError('pattern') &&
           registerForm.get('password')?.touched){
           <span class="text-danger">{{
             "register.passwordErrorPattern" | translate
-          }}</span>
+            }}</span>
           }
         </div>
       </div>
       <!-- submit button -->
-      <div class="row align-items-center">
+      <div class="row align-items-center mt-5">
         <div class="auth-submit">
           <button type="submit">
             {{ "register.signUp" | translate }} <i class="pi pi-check"></i>

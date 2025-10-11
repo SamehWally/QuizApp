@@ -21,8 +21,8 @@
 
 
     </div>
-    
-    <div class="flex justify-center my-2 px-3">
+
+    <div class="flex justify-center my-2 mb-5 px-3">
         <label class="py-2" for="groupAuto">{{'addEditStudent.SelectGroup'|translate}}</label>
         <p-autocomplete inputId="groupAuto" [(ngModel)]="studentGroup" [suggestions]="filteredStudentGroups"
             (completeMethod)="searchGroup($event)" field="name" [dropdown]="true"
