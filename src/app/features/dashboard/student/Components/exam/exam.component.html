@@ -60,6 +60,8 @@
   label="Next"
   icon="pi pi-arrow-right"
   iconPos="right"
+  styleClass="btn-dark-success"
+  [disabled]="!selectedAnswers[i]"
   (onClick)="activateCallback(i + 2)"
 ></p-button>
 
@@ -67,7 +69,8 @@
   *ngIf="i === quiz.questions.length - 1"
   label="Submit"
   icon="pi pi-check"
-  severity="success"
+ styleClass="btn-dark-success"
+   [disabled]="selectedAnswers.length < quiz.questions.length"
   (onClick)="onSubmit()"
 ></p-button>
             </div>

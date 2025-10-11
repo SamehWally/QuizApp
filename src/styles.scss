@@ -120,3 +120,27 @@
   background-color: black !important;
   color: white !important;
 }
+
+//steper
+.p-step:has(~ .p-step-active) .p-stepper-separator {
+    background-color: black !important;
+}
+.p-step-active .p-step-title {
+color: black !important;
+}
+.p-step-active .p-step-number {
+ color: black !important;
+}
+.btn-dark-success {
+  background-color: black !important;
+  border: 1px solid black !important;
+  color: #fff !important;
+}
+
+.btn-dark-success:hover {
+  background-color: black !important;
+}
+.p-radiobutton-checked .p-radiobutton-box {
+    border-color: black !important;
+    background:black !important;
+}
